@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="AppData\Images\Logos\TingenCommander_ORIGINAL.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="AppData\Images\Logos\TingenCommander_ORIGINAL.png" />
+  </ItemGroup>
+
 </Project>

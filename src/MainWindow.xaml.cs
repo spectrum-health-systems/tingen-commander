@@ -1,6 +1,23 @@
-﻿using System.Diagnostics;
-using System.IO;
+﻿// =============================================================== 24.10.0 =====
+// Tingen Commander:
+// https://github.com/APrettyCoolProgram/Tingen-Commander
+// Copyright (c) A Pretty Cool Program. All rights reserved.
+// Licensed under the Apache 2.0 license.
+// ================================================================ 241019 =====
+
+// u2241019.0910_code
+// u241019_documentation
+
+using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace TingenCommander
 {
@@ -9,125 +26,83 @@ namespace TingenCommander
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string TingenMode { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            GetModeStatuses();
-            LabelDiskFreeSpaceValue.Content= GetFreeSpace();
+            TingenMode = "Enabled";
 
-            long exportSize = GetDirectorySizeFast(@"T:\UAT\Exports");
-            long alertSize = GetDirectorySizeFast(@"T:\UAT\Messages\Alerts");
-            long errorSize = GetDirectorySizeFast(@"T:\UAT\Messages\Errors");
-            long warningSize = GetDirectorySizeFast(@"T:\UAT\Messages\Warnings");
-
-            ButtonViewExportedData.Content = $"View exported data ({exportSize / (1024 * 1024)} MB)";
-            ButtonViewAlertMessages.Content = $"View alert messages ({alertSize / (1024 * 1024)} MB)";
-            ButtonViewErrorMessages.Content = $"View error messages data ({errorSize / (1024 * 1024)} MB)";
-            ButtonViewWarningMessages.Content = $"View warning messages data ({warningSize / (1024 * 1024)} MB)";
+            SetupTingenMode(TingenMode);
         }
 
-        private void ButtonRefreshModeStatuses_Click(object sender, RoutedEventArgs e)
+        private void BtnTingenMode_Click(object sender, RoutedEventArgs e)
         {
-            GetModeStatuses();
-        }
+            var message = "";
 
-
-        private string GetFreeSpace()
-        {
-            DriveInfo driveInfo = new DriveInfo(@"T:\");
-            long freeSpace = driveInfo.AvailableFreeSpace;
-
-            return $"{freeSpace / (1024 * 1024 * 1024)} GB";
-        }
-
-        public static long GetDirectorySizeFast(string directoryPath)
-        {
-            long size = 0;
-            FileSystemInfo[] fileSystemInfos = new DirectoryInfo(directoryPath).GetFileSystemInfos();
-
-            foreach (FileSystemInfo fileSystemInfo in fileSystemInfos)
+            if (TingenMode == "Enabled")
             {
-                if (fileSystemInfo is FileInfo)
-                {
-                    size += (fileSystemInfo as FileInfo).Length;
-                }
-                else
-                {
-                    size += GetDirectorySizeFast((fileSystemInfo as DirectoryInfo).FullName);
-                }
+                message = $"YOU ARE ABOUT TO DISABLE THE TINGEN WEB SERVICE!{Environment.NewLine}" +
+                          Environment.NewLine +
+                          $"The Tingen web service is currently enabled.{Environment.NewLine}" +
+                          Environment.NewLine +
+                          $"Clicking \"Yes\" will disable Tingen entirely.{Environment.NewLine}" +
+                          Environment.NewLine +
+                          $"If you disable the Tingen, it will not function.{Environment.NewLine}" +
+                          Environment.NewLine +
+                          $"Are you sure you want to do this?{ Environment.NewLine}" +
+                          Environment.NewLine +
+                          $"If you are not sure, click \"No\", and Tingen will remain enabled.";
             }
-
-            return size;
-        }
-
-
-        private void GetTingenMode()
-        {
-            if (File.Exists(@"T:\Remote\Tingen LIVE Mode - Enabled"))
+            else if (TingenMode == "Disabled")
             {
-                TabItemTingen.Foreground = System.Windows.Media.Brushes.Green;
-                TabItemTingen.FontWeight = FontWeights.Bold;
-                ButtonTingenMode.Content = "Enabled";
-                ButtonTingenMode.Background = System.Windows.Media.Brushes.LightGreen;
-                ButtonTingenMode.Foreground = System.Windows.Media.Brushes.Black;
-                ButtonTingenMode.BorderBrush = System.Windows.Media.Brushes.Green;
-
+                message = "Clicking \"OK\" will enable the Tingen web service. Are you sure you want to do this?";
             }
-            else if (File.Exists(@"T:\Remote\Tingen LIVE Mode - Disabled"))
+            else if (TingenMode == "Passthrough")
             {
-                TabItemTingen.Foreground = System.Windows.Media.Brushes.DarkGray;
+                message = "Clicking \"OK\" will force-enable the Tingen web service. Are you sure you want to do this?";
             }
             else
             {
-                TabItemTingen.Foreground = System.Windows.Media.Brushes.Red;
-                TabItemTingen.FontWeight = FontWeights.Bold;
-                ButtonTingenMode.Content = "Unknown";
-                ButtonTingenMode.Background = System.Windows.Media.Brushes.IndianRed;
-                ButtonTingenMode.Foreground = System.Windows.Media.Brushes.White;
-                ButtonTingenMode.BorderBrush = System.Windows.Media.Brushes.DarkRed;
+                message = "Clicking \"OK\" won't do anything.";
             }
 
+            var test = MessageBox.Show(message, "IMPORTANT! PLEASE READ THIS MESSAGE!", MessageBoxButton.YesNo);
 
-        }
-
-        public void GetModeStatuses()
-        {
-            GetTingenMode();
-        }
-
-        private void ButtonDeleteAllTraceLogs_Click(object sender, RoutedEventArgs e)
-        {
-            string[] files = Directory.GetFiles(@"T:\UAT\Sessions\", "*.trace", SearchOption.AllDirectories).ToArray();
-
-
-            foreach (string file in files)
+            if (test == MessageBoxResult.Yes)
             {
-                File.Delete(file);
+                TingenMode = "Enabled";
+                BtnTingenMode.Content = "Enableddsdsd";
             }
 
-            MessageBox.Show("All trace logs have been deleted.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void ButtonViewExportedData_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("explorer.exe", @"T:\UAT\Exports");
 
         }
 
-        private void ButtonViewAlertMessages_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("explorer.exe", @"T:\UAT\Messages\Alerts");
-        }
 
-        private void ButtonViewErrorMessages_Click(object sender, RoutedEventArgs e)
+        private void SetupTingenMode(string tingenMode)
         {
-            Process.Start("explorer.exe", @"T:\UAT\Messages\Errors");
-        }
-
-        private void ButtonViewWarningMessages_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("explorer.exe", @"T:\UAT\Messages\Warnings");
+            if (tingenMode == "Enabled")
+            {
+                BtnTingenMode.Content = "Enabled";
+                BtnTingenMode.Background = Brushes.Green;
+            }
+            else if (tingenMode == "Disabled")
+            {
+                BtnTingenMode.Content = "Disabled";
+                BtnTingenMode.Background = Brushes.Red;
+            }
+            else if (tingenMode == "Passthrough")
+            {
+                BtnTingenMode.Content = "Passthrough";
+                BtnTingenMode.Background = Brushes.Orange;
+            }
+            else
+            {
+                BtnTingenMode.Content = "Unknown";
+                BtnTingenMode.Background = Brushes.Gray;
+            }
         }
     }
 }

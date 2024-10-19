@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4538B85-3AC7-4ADB-956F-AF825D58F633}|TingenCommander.csproj|d:\\github\\spectrum health systems\\tingen-commander\\src\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4538B85-3AC7-4ADB-956F-AF825D58F633}|TingenCommander.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4538B85-3AC7-4ADB-956F-AF825D58F633}|TingenCommander.csproj|d:\\github\\spectrum health systems\\tingen-commander\\src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F4538B85-3AC7-4ADB-956F-AF825D58F633}|TingenCommander.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE5BE56-1974-4E0D-9182-644F1EC0F666}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|d:\\github\\spectrum health systems\\tingen-lieutenant\\src\\welcometotingenlieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WelcomeToTingenLieutenant.cs",
+              "DocumentMoniker": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
+              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
+              "ToolTip": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
+              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T13:10:43.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T13:06:55.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml.cs \u2B24",
+              "RelativeToolTip": "MainWindow.xaml.cs \u2B24",
+              "ViewState": "AgIAABgAAAAAAAAAAIAwwC4AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T13:06:51.179Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
