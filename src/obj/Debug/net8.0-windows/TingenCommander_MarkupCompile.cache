@@ -1,19 +1,19 @@
 ﻿TingenCommander
-
+0.9.0.0
 
 winexe
 C#
 .cs
-D:\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net8.0-windows\
+D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net8.0-windows\
 TingenCommander
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\GitHub\Spectrum Health Systems\Tingen-Commander\src\App.xaml
+D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\App.xaml
 11407045341
 
 41681012038
-1981124507420
+198-1431420039
 MainWindow.xaml;
 
 False
