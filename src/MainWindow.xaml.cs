@@ -10,8 +10,10 @@
 // u241031_documentation
 
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Windows;
+using static System.Net.WebRequestMethods;
 
 namespace TingenCommander
 {
@@ -23,15 +25,40 @@ namespace TingenCommander
             InitializeComponent();
 
             SetupMainWindow();
-        }
+
+            if (System.IO.File.Exists(@"C:\TingenData\Commander\TingenCommanderSettings.json"))
+            {
+            }
+            else
+            {
+                TingenCommander.Session.CreateSettings();
+            }
 
         /// <summary>Setup the main window when Tingen Commander starts.</summary>
         private void SetupMainWindow()
         {
             Title = BuildVersionInfo("Alpha");
 
-            txbxTingenUatVersion.Text = GetUatVersion();
+            UpdateRepositoryVersions();
+            UpdateServerVersions();
+
         }
+
+
+        private void UpdateRepositoryVersions()
+        {
+            DownloadRepositoryFiles();
+            txbxTingenDevelopmentMainBranchVersion.Text = GetAsmxVersion(@"C:\Tingen\Tingen_development_main.asmx");
+            txbxTingenRepositoryDevelopmentBranch.Text= GetAsmxVersion(@"C:\Tingen\Tingen_development.asmx");
+        }
+
+        private void UpdateServerVersions()
+        {
+            lblTingenUatVersion.Content = $"Version {GetAsmxVersion(@"C:\Tingen\UAT\Tingen_development.asmx.cs")}";
+            txbxTingenLiveVersion.Text = GetAsmxVersion(@"C:\Tingen\LIVE\Tingen.asmx.cs");
+
+        }
+
 
         /// <summary>Build the Tingen Commander version information.</summary>
         /// <param name="releaseStage">The release stage (e.g., "Alpha", "Beta")</param>
@@ -49,17 +76,42 @@ namespace TingenCommander
             return $"Tingen Commander - v{Assembly.GetExecutingAssembly().GetName().Version} {releaseStage}";
         }
 
-        private string GetUatVersion()
+        private void DownloadRepositoryFiles()
         {
-            var fileContents = File.ReadAllLines(@"C:\Tingen\UAT\Tingen_development.asmx.cs");
+            DownloadInternetFile("https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/main/src/Tingen_development.asmx.cs", @"C:\Tingen\Tingen_development_main.asmx");
+            DownloadInternetFile("https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/development/src/Tingen_development.asmx.cs", @"C:\Tingen\Tingen_development.asmx");
+        }
 
-            var versionLine = fileContents[0];
+        private void DownloadInternetFile(string toDownload, string toSave)
+        {
+            var asmxUrl = toDownload;
+            var asmxDownloadPath = toSave;
 
-            var versionNumber = versionLine.Replace("=", "");
+            var client = new WebClient();
+            client.DownloadFile(asmxUrl, asmxDownloadPath);
+        }
 
-            var versionNumber2 = versionNumber.Trim();
 
-            return versionNumber2;
+
+        private string GetAsmxVersion(string asmxFile)
+        {
+            string asmxVersion = "Unknown";
+
+            if (System.IO.File.Exists(asmxFile))
+            {
+                using (StreamReader reader = new StreamReader(asmxFile))
+                {
+                    asmxVersion = reader.ReadLine() ?? "";
+                }
+
+                asmxVersion = asmxVersion.Replace("//", "");
+                asmxVersion = asmxVersion.Replace("=", "");
+
+                asmxVersion =  asmxVersion.Trim();
+            }
+
+            return asmxVersion;
+
         }
     }
 }

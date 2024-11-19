@@ -7,15 +7,23 @@
       "RelativeMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|d:\\development\\github\\spectrum health systems\\tingen-commander\\src\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|solutionrelative:session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|d:\\development\\github\\spectrum health systems\\tingen-commander\\src\\dujson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|solutionrelative:dujson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|d:\\development\\github\\spectrum health systems\\tingen-commander\\src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|d:\\development\\github\\spectrum health systems\\tingen-lieutenant\\src\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|d:\\development\\github\\spectrum health systems\\tingen-commander\\src\\tingencommander.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{5ECE5447-AE2F-4DA1-8D12-E20E2C68406F}|TingenCommander.csproj|solutionrelative:tingencommander.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|d:\\development\\github\\spectrum health systems\\tingen-lieutenant\\src\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,7 +41,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DuJson.cs",
+              "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\DuJson.cs",
+              "RelativeDocumentMoniker": "DuJson.cs",
+              "ToolTip": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\DuJson.cs",
+              "RelativeToolTip": "DuJson.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T17:55:40.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Session.cs",
+              "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\Session.cs",
+              "RelativeDocumentMoniker": "Session.cs",
+              "ToolTip": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\Session.cs",
+              "RelativeToolTip": "Session.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T17:52:50.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -45,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Lieutenant\\src\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Class1.cs",
@@ -58,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TingenCommander",
               "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\TingenCommander.csproj",
               "RelativeDocumentMoniker": "TingenCommander.csproj",
@@ -74,9 +108,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml.cs \u2B24",
-              "RelativeToolTip": "MainWindow.xaml.cs \u2B24",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAgwCAAAAA4AAAAAAAAAA==",
+              "ToolTip": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T14:08:59.801Z",
               "EditorCaption": ""
