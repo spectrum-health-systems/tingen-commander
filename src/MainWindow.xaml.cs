@@ -9,6 +9,7 @@
 // u241119.0901_code
 // u241031_documentation
 
+using System.IO;
 using System.Reflection;
 using System.Windows;
 
@@ -28,6 +29,8 @@ namespace TingenCommander
         private void SetupMainWindow()
         {
             Title = BuildVersionInfo("Alpha");
+
+            txbxTingenUatVersion.Text = GetUatVersion();
         }
 
         /// <summary>Build the Tingen Commander version information.</summary>
@@ -44,6 +47,19 @@ namespace TingenCommander
             }
 
             return $"Tingen Commander - v{Assembly.GetExecutingAssembly().GetName().Version} {releaseStage}";
+        }
+
+        private string GetUatVersion()
+        {
+            var fileContents = File.ReadAllLines(@"C:\Tingen\UAT\Tingen_development.asmx.cs");
+
+            var versionLine = fileContents[0];
+
+            var versionNumber = versionLine.Replace("=", "");
+
+            var versionNumber2 = versionNumber.Trim();
+
+            return versionNumber2;
         }
     }
 }
