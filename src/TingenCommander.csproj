@@ -10,4 +10,15 @@
     <FileVersion>0.9.0.0</FileVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\APrettyCoolProgram\Du\src\Du.csproj" />
+    <ProjectReference Include="..\..\Tingen-Lieutenant\src\TingenLieutenant.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppData\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

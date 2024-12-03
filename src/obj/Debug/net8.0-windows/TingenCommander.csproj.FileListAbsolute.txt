@@ -19,3 +19,4 @@ D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net
 D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net8.0-windows\TingenCommander.pdb
 D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net8.0-windows\TingenCommander.genruntimeconfig.cache
 D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\obj\Debug\net8.0-windows\ref\TingenCommander.dll
+D:\Development\GitHub\Spectrum Health Systems\Tingen-Commander\src\bin\Debug\net8.0-windows\AppData\README.md

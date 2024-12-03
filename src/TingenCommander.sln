@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TingenCommander", "TingenCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TingenLieutenant", "..\..\Tingen-Lieutenant\src\TingenLieutenant.csproj", "{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Du", "..\..\..\APrettyCoolProgram\Du\src\Du.csproj", "{4A73A384-4467-41CC-B176-440AC375BAD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C672A1-81E4-4D53-9808-BB1A6CD7C626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A73A384-4467-41CC-B176-440AC375BAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A73A384-4467-41CC-B176-440AC375BAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A73A384-4467-41CC-B176-440AC375BAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A73A384-4467-41CC-B176-440AC375BAD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
