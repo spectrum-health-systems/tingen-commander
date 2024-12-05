@@ -1,68 +1,36 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
-      "Du/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Du.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Du.dll": {}
-        }
-      },
-      "TingenLieutenant/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Du": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TingenLieutenant.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TingenLieutenant.dll": {}
-        }
-      }
-    }
+    "net8.0-windows7.0": {}
   },
-  "libraries": {
-    "Du/1.0.0": {
-      "type": "project",
-      "path": "../../../APrettyCoolProgram/Du/src/Du.csproj",
-      "msbuildProject": "../../../APrettyCoolProgram/Du/src/Du.csproj"
-    },
-    "TingenLieutenant/1.0.0": {
-      "type": "project",
-      "path": "../../Tingen-Lieutenant/src/TingenLieutenant.csproj",
-      "msbuildProject": "../../Tingen-Lieutenant/src/TingenLieutenant.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Du >= 1.0.0",
-      "TingenLieutenant >= 1.0.0"
+      "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj",
+      "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cbanw\\.nuget\\packages\\": {},
+    "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\": {},
+    "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\TingenCommander.csproj",
+      "projectUniqueName": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
       "projectName": "TingenCommander",
-      "projectPath": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\TingenCommander.csproj",
-      "packagesPath": "C:\\Users\\cbanw\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Commander\\src\\obj\\",
+      "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+      "packagesPath": "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\",
+      "outputPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\cbanw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -78,11 +46,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Development\\GitHub\\APrettyCoolProgram\\Du\\src\\Du.csproj": {
-              "projectPath": "D:\\Development\\GitHub\\APrettyCoolProgram\\Du\\src\\Du.csproj"
+            "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj": {
+              "projectPath": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj"
             },
-            "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
-              "projectPath": "D:\\Development\\GitHub\\Spectrum Health Systems\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
+            "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
+              "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
             }
           }
         }
@@ -124,5 +92,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }
