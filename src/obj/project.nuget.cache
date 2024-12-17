@@ -1,27 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xuv9RcVQjWw=",
-  "success": false,
-  "projectFilePath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+  "dgSpecHash": "yNuUI/d4Apw=",
+  "success": true,
+  "projectFilePath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

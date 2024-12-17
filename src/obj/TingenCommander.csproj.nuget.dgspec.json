@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj": {}
+    "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj": {}
   },
   "projects": {
-    "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj": {
+    "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+        "projectUniqueName": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj",
         "projectName": "TingenCommander",
-        "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+        "projectPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj",
         "packagesPath": "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\",
-        "outputPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\obj\\",
+        "outputPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -28,18 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj": {
-                "projectPath": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj"
-              },
-              "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
-                "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
+              "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
+                "projectPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
               }
             }
           }
@@ -52,7 +46,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -78,7 +72,72 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj",
+        "projectName": "TingenLieutenant",
+        "projectPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj",
+        "packagesPath": "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\",
+        "outputPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,36 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net8.0-windows7.0": {
+      "TingenLieutenant/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TingenLieutenant.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TingenLieutenant.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TingenLieutenant/1.0.0": {
+      "type": "project",
+      "path": "../../Tingen-Lieutenant/src/TingenLieutenant.csproj",
+      "msbuildProject": "../../Tingen-Lieutenant/src/TingenLieutenant.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj",
-      "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
+      "TingenLieutenant >= 1.0.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\": {},
-    "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+      "projectUniqueName": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj",
       "projectName": "TingenCommander",
-      "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\TingenCommander.csproj",
+      "projectPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\TingenCommander.csproj",
       "packagesPath": "C:\\Users\\Chris.Banwarth\\.nuget\\packages\\",
-      "outputPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Commander\\src\\obj\\",
+      "outputPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Chris.Banwarth\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -39,18 +52,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj": {
-              "projectPath": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj"
-            },
-            "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
-              "projectPath": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
+            "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj": {
+              "projectPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj"
             }
           }
         }
@@ -63,7 +72,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -89,28 +98,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\IT\\GitHub\\SHS\\Public repositories\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\IT\\GitHub\\SHS\\APrettyCoolProgram\\Du\\src\\Du.csproj",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }
