@@ -9,11 +9,10 @@
 // u241217.1132_code
 // u241217_documentation
 
-using System.IO;
 using System.Reflection;
 using System.Windows;
+
 using TingenLieutenant;
-using TingenLieutenant.Du;
 
 namespace TingenCommander
 {
@@ -28,44 +27,79 @@ namespace TingenCommander
              */
             const string configFilePath = @".\AppData\TingenCommanderSettings.json";
 
-            Sesh cmdrSesh = Sesh.LoadConfiguration(configFilePath);
+            Sesh tcmdrSesh = Sesh.LoadConfiguration(configFilePath);
 
-            Sesh.ResetSessionData(cmdrSesh.DataRoot);
+            Sesh.ResetSessionData(tcmdrSesh.SessionRoot);
 
-            InitializeMainWindow(cmdrSesh);
+            SetWindowTitle("Alpha");
+
+            Repository.DownloadAsmxFiles(tcmdrSesh.SessionRoot, tcmdrSesh.MainBranchUrl, tcmdrSesh.DevelopmentBranchUrl);
+
+            SetRepositoryVersions(tcmdrSesh.SessionRoot);
+
+
+
+            SetUatInformation();
+
+            var t = 0;
         }
 
-        /// <summary>Setup the main window when Tingen Commander starts.</summary>
-        private void InitializeMainWindow(Sesh cmdrSesh)
+        /// <summary>Build the Tingen Commander version information.</summary>
+        /// <param name="postfix">The release stage (e.g., "Alpha", "Beta")</param>
+        /// <remarks>
+        /// If <c>releaseStage</c> is passed as an empty string (e.g., <c>""</c>), only the version number will be used.
+        /// </remarks>
+        /// <returns>The Tingen Commander version string.</returns>
+        private void SetWindowTitle(string postfix)
         {
-            Title = AppInfo.BuildVersionInfo("Alpha");
-
-            TingenLieutenant.Repository.UpdateRepositoryVersions(cmdrSesh.DataRoot);
-
-            txbxTingenDevelopmentMainBranchVersion.Text = TingenLieutenant.AsmxFiles.GetAsmxVersion($@"{cmdrSesh.DataRoot}\Tingen_development_main.asmx");
-            txbxTingenRepositoryDevelopmentBranch.Text = TingenLieutenant.AsmxFiles.GetAsmxVersion($@"{cmdrSesh.DataRoot}\Tingen_development.asmx");
+            if (string.IsNullOrWhiteSpace(postfix))
+            {
+                Title = $"Tingen Commander - v{Assembly.GetExecutingAssembly().GetName().Version}";
+            }
+            else
+            {
+                Title = $"Tingen Commander - v{Assembly.GetExecutingAssembly().GetName().Version} ({postfix})";
+            }
+        }
+        private void SetRepositoryVersions(string sessionRoot)
+        {
+            txbxMainBranchVersion.Text = AsmxFile.GetVersion($@"{sessionRoot}\MainBranch.asmx");
+            txbxDevelopmentBranchVersion.Text = AsmxFile.GetVersion($@"{sessionRoot}\DevelopmentBranch.asmx");
         }
 
+        private void SetUatInformation()
+        {
+            var uatService = SettingsFile.Import(@"T:\Remote\Current-Tingen-UAT-settings.md"); // put in config
 
-        //private string GetAsmxVersion(string asmxFile)
-        //{
-        //    string asmxVersion = "Unknown";
+            lblUatServiceVersion.Content = uatService.ServiceVersion;
+            lblUatServiceUpdated.Content = uatService.ServiceUpdated;
+            lblUatServiceMode.Content    = uatService.ServiceMode;
+            lblUatTraceLogLevel.Content = uatService.TraceLogLevel;
+            lblUatTraceLogLevelDelay.Content = uatService.TraceLogDelay;
 
-        //    if (System.IO.File.Exists(asmxFile))
-        //    {
-        //        using (StreamReader reader = new StreamReader(asmxFile))
-        //        {
-        //            asmxVersion = reader.ReadLine() ?? "";
-        //        }
+            SetUatServiceModeBackground(uatService.ServiceMode);
 
-        //        asmxVersion = asmxVersion.Replace("//", "");
-        //        asmxVersion = asmxVersion.Replace("=", "");
+        }
 
-        //        asmxVersion = asmxVersion.Trim();
-        //    }
+        private void SetUatServiceModeBackground(string mode)
+        {
+            switch (mode.ToLower())
+            {
+                case "enabled":
+                    lblUatServiceMode.Background = System.Windows.Media.Brushes.LightGreen;
+                    break;
+                case "passthrough":
+                    lblUatServiceMode.Background = System.Windows.Media.Brushes.Yellow;
+                    break;
+                case "disabled":
+                    lblUatServiceMode.Background = System.Windows.Media.Brushes.Salmon;
+                    break;
+                default:
+                    lblUatServiceMode.Background = System.Windows.Media.Brushes.LightGray;
+                    break;
+            }
 
-        //    return asmxVersion;
 
-        //}
+        }
     }
 }

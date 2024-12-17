@@ -10,11 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Tingen-Lieutenant\src\TingenLieutenant.csproj" />
+    <None Remove="AppData\img\TingenCommander_ORIGINAL.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AppData\" />
+    <Content Include="AppData\img\TingenCommander_ORIGINAL.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tingen-Lieutenant\src\TingenLieutenant.csproj" />
   </ItemGroup>
 
   <ItemGroup>

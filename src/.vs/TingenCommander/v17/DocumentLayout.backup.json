@@ -3,42 +3,24 @@
   "WorkspaceRootPath": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\asmxfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\appinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:appinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\du\\dujson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\settingsfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\du\\duinternet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\du\\dufile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\sesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F9CFC11-7205-4172-AFED-54FE732903C5}|..\\..\\Tingen-Lieutenant\\src\\TingenLieutenant.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-lieutenant\\src\\welcometotingenlieutenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|c:\\it\\csb_development\\github\\spectrum\\tingen-commander\\src\\appdata\\readme.md||{24510B54-A648-4D69-A6C5-F68CBDF07546}",
-      "RelativeMoniker": "D:0:0:{9F0CE865-009F-4EF1-B53A-200402A51D84}|TingenCommander.csproj|solutionrelative:appdata\\readme.md||{24510B54-A648-4D69-A6C5-F68CBDF07546}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,138 +44,73 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwv0QAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAIAwwBcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:26:35.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T15:26:38.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DuJson.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuJson.cs",
-              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuJson.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuJson.cs",
-              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuJson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:48:31.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\AppData\\README.md",
-              "RelativeDocumentMoniker": "AppData\\README.md",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\AppData\\README.md",
-              "RelativeToolTip": "AppData\\README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-17T16:53:13.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Sesh.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Sesh.cs",
-              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Sesh.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Sesh.cs",
-              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Sesh.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwD4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:55:31.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "WelcomeToTingenLieutenant.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
-              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
-              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\WelcomeToTingenLieutenant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:56:26.842Z",
+              "WhenOpened": "2024-12-17T19:03:43.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DuInternet.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuInternet.cs",
-              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuInternet.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuInternet.cs",
-              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuInternet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Title": "Sesh.cs",
+              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Sesh.cs",
+              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Sesh.cs",
+              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Sesh.cs",
+              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Sesh.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwCgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:59:43.127Z",
+              "WhenOpened": "2024-12-17T19:05:06.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AppInfo.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\AppInfo.cs",
-              "RelativeDocumentMoniker": "AppInfo.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\AppInfo.cs",
-              "RelativeToolTip": "AppInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T17:00:42.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\Repository.cs",
-              "RelativeDocumentMoniker": "Repository.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\Repository.cs",
-              "RelativeToolTip": "Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwCIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T17:02:50.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Repository.cs",
               "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Repository.cs",
               "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Repository.cs",
               "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBcAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T17:18:50.427Z",
+              "WhenOpened": "2024-12-17T19:07:51.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AsmxFiles.cs",
-              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\AsmxFiles.cs",
-              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\AsmxFiles.cs",
-              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\AsmxFiles.cs \u2B24",
-              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\AsmxFiles.cs \u2B24",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Commander\\src\\MainWindow.xaml \u2B24",
+              "RelativeToolTip": "MainWindow.xaml \u2B24",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T19:08:12.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SettingsFile.cs",
+              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\SettingsFile.cs",
+              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\SettingsFile.cs",
+              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\SettingsFile.cs",
+              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\SettingsFile.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAkwDoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T17:22:36.45Z",
+              "WhenOpened": "2024-12-17T19:51:42.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DuFile.cs",
+              "DocumentMoniker": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuFile.cs",
+              "RelativeDocumentMoniker": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuFile.cs",
+              "ToolTip": "C:\\IT\\CSB_Development\\GitHub\\Spectrum\\Tingen-Lieutenant\\src\\Du\\DuFile.cs",
+              "RelativeToolTip": "..\\..\\Tingen-Lieutenant\\src\\Du\\DuFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:57:19.27Z",
               "EditorCaption": ""
             }
           ]

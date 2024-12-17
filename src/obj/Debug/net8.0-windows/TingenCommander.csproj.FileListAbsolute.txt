@@ -1,4 +1,5 @@
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\bin\Debug\net8.0-windows\TingenCommander.exe
+C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\bin\Debug\net8.0-windows\AppData\img\TingenCommander_ORIGINAL.png
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\bin\Debug\net8.0-windows\AppData\README.md
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\bin\Debug\net8.0-windows\TingenCommander.deps.json
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\bin\Debug\net8.0-windows\TingenCommander.runtimeconfig.json
@@ -24,3 +25,4 @@ C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\obj\Debug\net8.0-wind
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\obj\Debug\net8.0-windows\TingenCommander.pdb
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\obj\Debug\net8.0-windows\TingenCommander.genruntimeconfig.cache
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\obj\Debug\net8.0-windows\ref\TingenCommander.dll
+C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\obj\Debug\net8.0-windows\TingenCommander_Content.g.cs
