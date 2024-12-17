@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("TingenCommander")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34f8a0f0395bfb57da2674850f9ba8d204805138")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.9.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.9.0+d23f0ddb2ab87a68396244ccb1f19072d64ffef4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TingenCommander")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TingenCommander")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.9.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

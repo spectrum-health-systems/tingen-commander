@@ -1,5 +1,5 @@
 ﻿TingenCommander
-1.0.0.0
+0.9.0.0
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\IT\CSB_Development\GitHub\Spectrum\Tingen-Commander\src\App.xaml
 11407045341
 
-6-1990680714
+8-764771795
 199-1765847870
 MainWindow.xaml;
 
-False
+True
 
