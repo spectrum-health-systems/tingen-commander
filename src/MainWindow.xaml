@@ -103,6 +103,23 @@
                         </Border.Background>
 
                     </Border>
+                    <CheckBox
+                        x:Name="ckbxAdminMode"
+                        Margin="462,24,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Admin Mode"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        IsChecked="False" />
+                    <Label
+                        x:Name="lblAdminModeDescription"
+                        Width="300"
+                        Height="111"
+                        Margin="477,39,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Description of Admin Mode" />
                 </Grid>
             </TabItem>
 
