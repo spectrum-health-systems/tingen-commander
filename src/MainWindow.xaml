@@ -1,0 +1,313 @@
+﻿<Window
+    x:Class="TingenCommander.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TingenCommander"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Tingen Commander"
+    Width="800"
+    Height="450"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid>
+
+        <TabControl x:Name="tabControl">
+            <TabItem x:Name="tabOverview" Header="Overview">
+                <Grid Background="White">
+                    <Label
+                        x:Name="lblOverviewTingenMode"
+                        Width="149"
+                        Margin="52,69,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Unknown" />
+                    <Button
+                        x:Name="btnOverviewLiveToggleMode"
+                        Width="50"
+                        Margin="200,73,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="---" />
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="tabEvironments" Header="Environments">
+                <Grid Background="White">
+
+                    <!--  LIVE Environment header  -->
+                    <Label
+                        x:Name="lblLiveEnvironmentHeader"
+                        Width="250"
+                        Margin="76,12,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="Black"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="LIVE"
+                        Foreground="White" />
+
+                    <!--  Version header  -->
+                    <Label
+                        x:Name="lblTingenVersionHeader"
+                        Width="150"
+                        Margin="325,45,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Version" />
+
+                    <!--  Live version  -->
+                    <Label
+                        x:Name="lblLiveTingenVersion"
+                        Width="250"
+                        Margin="76,45,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0.0.0" />
+
+
+                    <Label
+                        x:Name="lblUatEnvironmentHeader"
+                        Width="250"
+                        Margin="474,12,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="Black"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="UAT"
+                        Foreground="White" />
+
+                    <Label
+                        x:Name="lblUatTingenVersion"
+                        Width="250"
+                        Margin="474,45,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0.0.0" />
+                    <Button
+                        x:Name="btnUatUpdateServiceVersion"
+                        Height="24"
+                        Margin="728,46,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Button" />
+                    <Label
+                        x:Name="lblLastUpdatedHeader"
+                        Width="150"
+                        Margin="325,72,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Last updated" />
+                    <Label
+                        x:Name="lblLiveLastUpdated"
+                        Width="250"
+                        Margin="76,72,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="MM/DD/YYYY" />
+                    <Label
+                        x:Name="lblUatLastUpdated"
+                        Width="250"
+                        Margin="474,72,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="MM/DD/YYYY" />
+                    <Label
+                        x:Name="lblTingenModeHeader"
+                        Width="150"
+                        Margin="325,99,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Mode" />
+                    <Label
+                        x:Name="lblLiveTingenMode"
+                        Width="250"
+                        Margin="76,99,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Unknown" />
+                    <Label
+                        x:Name="lblUatTingenMode"
+                        Width="250"
+                        Margin="474,99,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Unknown" />
+                    <Button
+                        x:Name="btnLiveTingenMode"
+                        Height="28"
+                        Margin="76,269,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Disable" />
+                    <Label
+                        x:Name="lblTingenHeader"
+                        Width="130"
+                        Margin="335,12,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Tingen" />
+                    <Label
+                        x:Name="lblTraceLogLevelHeader"
+                        Width="150"
+                        Margin="325,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Trace log level" />
+                    <Label
+                        x:Name="lblLiveTraceLogLevel"
+                        Width="250"
+                        Margin="76,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0" />
+                    <Label
+                        x:Name="lblUatTraceLogLevel"
+                        Width="250"
+                        Margin="474,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0" />
+                    <Label
+                        x:Name="lblTingenModeHeader_Copy1"
+                        Width="150"
+                        Margin="325,153,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Mode" />
+                    <Label
+                        x:Name="lblLiveTingenMode_Copy1"
+                        Width="250"
+                        Margin="76,153,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0" />
+                    <Label
+                        x:Name="lblUatTingenMode_Copy1"
+                        Width="250"
+                        Margin="474,153,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0.0.0" />
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Label
+                        x:Name="lblRepositoryHeader"
+                        Width="195"
+                        Margin="595,300,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Center"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="REPOSITORY" />
+                    <Label
+                        x:Name="lblMainVersionHeader"
+                        Width="100"
+                        Margin="595,328,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Right"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Main" />
+                    <Label
+                        x:Name="lblMainVersion"
+                        Width="96"
+                        Margin="694,328,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0.0.0" />
+                    <Label
+                        x:Name="lblDevVersionHeader"
+                        Width="100"
+                        Margin="595,355,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        HorizontalContentAlignment="Right"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="Development" />
+                    <Label
+                        x:Name="lblDevVersion"
+                        Width="96"
+                        Margin="694,355,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Content="0.0.0" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
