@@ -4,16 +4,18 @@
 // Documentation: https://github.com/spectrum-health-systems/Tingen-Documentation
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
-// ================================================================ 241120 =====
+// ================================================================ 250109 =====
 
-// u241120.0920_code
-// u241120_documentation
+// b250109.1055
+// u250109_code
+// u250109_documentation
 
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows;
-using static System.Net.WebRequestMethods;
+
+using TingenCommander.Session;
 
 namespace TingenCommander
 {
@@ -26,16 +28,16 @@ namespace TingenCommander
             InitializeComponent();
 
             /* This shouldn't be modified.
-             */
+              */
             const string configFilePath = @".\AppData\TingenCommanderSettings.json";
 
-            Sesh cmdrSesh = Sesh.LoadConfiguration(configFilePath);
+            CmdrSession cmdrSession = CmdrSession.LoadConfiguration(configFilePath);
 
-            Sesh.ResetSessionData(cmdrSesh.DataRoot);
+            CmdrSession.ResetSessionData(cmdrSession.DataRoot);
 
             SetupMainWindow();
 
-            UpdateRepositoryVersions(cmdrSesh.DataRoot);
+            UpdateRepositoryVersions(cmdrSession.DataRoot);
 
             //UpdateServerVersions($@"{session.CommanderLocalDataRoot}\Session");
         }
@@ -45,7 +47,6 @@ namespace TingenCommander
         {
             Title = BuildVersionInfo("Alpha");
         }
-
 
         private void UpdateRepositoryVersions(string sessionData)
         {
@@ -58,9 +59,7 @@ namespace TingenCommander
         {
             lblTingenUatVersion.Content = $"Version {GetAsmxVersion(@"C:\Tingen\UAT\Tingen_development.asmx.cs")}";
             txbxTingenLiveVersion.Text = GetAsmxVersion(@"C:\Tingen\LIVE\Tingen.asmx.cs");
-
         }
-
 
         /// <summary>Build the Tingen Commander version information.</summary>
         /// <param name="releaseStage">The release stage (e.g., "Alpha", "Beta")</param>
@@ -83,7 +82,6 @@ namespace TingenCommander
             DownloadInternetFile("https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/main/src/Tingen_development.asmx.cs", $@"{sessionData}\Tingen_development_main.asmx");
             DownloadInternetFile("https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/development/src/Tingen_development.asmx.cs", $@"{sessionData}\Tingen_development.asmx");
         }
-
         private void DownloadInternetFile(string toDownload, string toSave)
         {
             var asmxUrl = toDownload;
@@ -92,9 +90,6 @@ namespace TingenCommander
             var client = new WebClient();
             client.DownloadFile(asmxUrl, asmxDownloadPath);
         }
-
-
-
         private string GetAsmxVersion(string asmxFile)
         {
             string asmxVersion = "Unknown";
@@ -113,7 +108,6 @@ namespace TingenCommander
             }
 
             return asmxVersion;
-
         }
     }
 }

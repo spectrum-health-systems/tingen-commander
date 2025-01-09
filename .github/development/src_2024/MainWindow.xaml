@@ -10,56 +10,60 @@
     Height="700"
     mc:Ignorable="d">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169*"/>
+            <ColumnDefinition Width="831*"/>
+        </Grid.ColumnDefinitions>
 
         <!--  Main Branch  -->
         <Label
             x:Name="lblMainBranchVersion"
             Width="122"
-            Margin="372,4,0,0"
+            Margin="203,4,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Right"
             BorderBrush="Black"
             BorderThickness="1"
             Content="Main"
-            FontSize="16" />
+            FontSize="16" Grid.Column="1" />
         <TextBox
             x:Name="txbxMainBranchVersion"
             Width="80"
             Height="33"
-            Margin="499,5,0,0"
+            Margin="330,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             VerticalContentAlignment="Center"
             BorderBrush="black"
             BorderThickness="1"
             FontSize="16"
-            Text="00.00.00" />
+            Text="00.00.00" Grid.Column="1" />
 
         <!--  Development Branch  -->
         <Label
             x:Name="lblDevelopmentBranchVersion"
             Width="122"
-            Margin="594,5,0,0"
+            Margin="425,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Right"
             BorderBrush="Black"
             BorderThickness="1"
             Content="Development"
-            FontSize="16" />
+            FontSize="16" Grid.Column="1" />
         <TextBox
             x:Name="txbxDevelopmentBranchVersion"
             Width="80"
             Height="33"
-            Margin="721,10,0,0"
+            Margin="552,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             VerticalContentAlignment="Center"
             BorderBrush="Black"
             BorderThickness="1"
             FontSize="16"
-            Text="00.00.00" />
+            Text="00.00.00" Grid.Column="1" />
 
         <!--  LIVE  -->
 
@@ -67,14 +71,14 @@
         <Label
             x:Name="lblUatVersion1"
             Width="122"
-            Margin="245,72,0,0"
+            Margin="76,72,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Right"
             BorderBrush="Black"
             BorderThickness="1"
             Content="UAT"
-            FontSize="16" />
+            FontSize="16" Grid.Column="1" />
         <TextBox
             x:Name="txbxUatVersion"
             Width="80"
@@ -86,10 +90,10 @@
             BorderBrush="Black"
             BorderThickness="1"
             FontSize="16"
-            Text="00.00.00" />
+            Text="00.00.00" Grid.ColumnSpan="2" />
 
         <!--  Tab Control  -->
-        <TabControl x:Name="tctlMain" Margin="10,37,10,10">
+        <TabControl x:Name="tctlMain" Margin="10,37,10,10" Grid.ColumnSpan="2">
 
             <TabItem x:Name="tabCommanderSettings" Header="Tingen Commander">
                 <Grid Background="#FFFFFF">
