@@ -4,7 +4,7 @@
 // Documentation: https://github.com/spectrum-health-systems/Tingen-Documentation
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
-// ================================================================ 250109 =====
+// ================================================================ 250116 =====
 
 // b250109.1120
 // u250109_code
@@ -36,34 +36,42 @@ namespace TingenCommander
             Session.Start(session, configPath);
 
             SetupWindow(session);
+
+
+
+            lblTingenVersion.Content = session.LiveDetails.TingenVersion;
+
+
+
+
+            lblTingenLastUpdated.Content = session.LiveDetails.TingenLastUpdated;
         }
 
         internal void SetupWindow(Session session)
         {
             // Overview
 
-            if (session.LiveDetails.TingenMode.ToLower() == "enabled")
-            {
-                lblOverviewTingenMode.Content = "Enabled";
-                lblOverviewTingenMode.Background = Brushes.LightGreen;
-                lblOverviewTingenMode.Foreground = Brushes.DarkGreen;
-                btnOverviewLiveToggleMode.Content = "Disable";
-            }
-            else
-            {
-                lblOverviewTingenMode.Content = "Disabled";
-                lblOverviewTingenMode.Background = Brushes.LightCoral;
-                lblOverviewTingenMode.Foreground = Brushes.DarkRed;
-                btnOverviewLiveToggleMode.Content = "Enable";
-            }
+            //if (session.LiveDetails.TingenMode.ToLower() == "enabled")
+            //{
+            //    lblOverviewTingenMode.Content = "Enabled";
+            //    lblOverviewTingenMode.Background = Brushes.LightGreen;
+            //    lblOverviewTingenMode.Foreground = Brushes.DarkGreen;
 
-                // Environments
+            //}
+            //else
+            //{
+            //    lblOverviewTingenMode.Content = "Disabled";
+            //    lblOverviewTingenMode.Background = Brushes.LightCoral;
+            //    lblOverviewTingenMode.Foreground = Brushes.DarkRed;
 
-                lblMainVersion.Content = session.MainVersion;
-            lblDevVersion.Content  = session.DevVersion;
-            lblLiveTingenVersion.Content = session.LiveDetails.TingenVersion;
-            lblLiveLastUpdated.Content = session.LiveDetails.TingenLastUpdated;
-            lblLiveTingenMode.Content = session.LiveDetails.TingenMode;
+            //}
+
+            //// Environments
+            //lblMainVersion.Content = session.MainVersion;
+            //lblDevVersion.Content  = session.DevVersion;
+            //lblLiveTingenVersion.Content = session.LiveDetails.TingenVersion;
+            //lblLiveLastUpdated.Content = session.LiveDetails.TingenLastUpdated;
+            //lblLiveTingenMode.Content = session.LiveDetails.TingenMode;
         }
     }
 }
