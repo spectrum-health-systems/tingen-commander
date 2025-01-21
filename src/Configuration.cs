@@ -1,5 +1,4 @@
-﻿// b250109.1130
-// u250109_code
+﻿// u250121_code
 // u250109_documentation
 
 using System.IO;
@@ -13,8 +12,10 @@ namespace TingenCommander
     /// </summary>
     internal class Configuration
     {
+        public bool AdminMode { get; set; }
         public string SessionRoot { get; set; }
         public string TingenDataRoot { get; set; }
+
         public string MainUrl { get; set; }
         public string DevUrl { get; set; }
 
@@ -39,10 +40,11 @@ namespace TingenCommander
         {
             return new Configuration
             {
-                SessionRoot = @".\AppData\Session",
-                TingenDataRoot  = "T:",
-                MainUrl     = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/main/src/Tingen_development.asmx.cs",
-                DevUrl      = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/development/src/Tingen_development.asmx.cs"
+                AdminMode      = true,
+                SessionRoot    = @".\AppData\Session",
+                TingenDataRoot = "T:",
+                MainUrl        = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/main/src/Tingen_development.asmx.cs",
+                DevUrl         = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/development/src/Tingen_development.asmx.cs"
             };
         }
     }

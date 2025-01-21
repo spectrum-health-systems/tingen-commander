@@ -1,5 +1,4 @@
-﻿// b250109.1447
-// u250109_code
+﻿// u250121_code
 // u250109_documentation
 
 using System.IO;
@@ -27,17 +26,17 @@ namespace TingenCommander
 
             foreach (var item in rawData)
             {
-                if (item.StartsWith("> Version")) // put ":" in document
+                if (item.StartsWith("Service version:")) // put ":" in document
                 {
-                    environmentDetails.TingenVersion = item.Replace("> Version", "").Trim();
+                    environmentDetails.TingenVersion = item.Replace("Service version:", "").Trim();
                 }
-                else if (item.StartsWith("> Last updated:"))
+                else if (item.StartsWith("Service updated:"))
                 {
-                    environmentDetails.TingenLastUpdated = item.Replace("> Last updated:", "").Trim();
+                    environmentDetails.TingenLastUpdated = item.Replace("Service updated:", "").Trim();
                 }
-                else if (item.StartsWith("Mode:"))
+                else if (item.StartsWith("Service mode:"))
                 {
-                    environmentDetails.TingenMode = item.Replace("Mode:", "").Trim();
+                    environmentDetails.TingenMode = item.Replace("Service mode:", "").Trim();
                 }
                 else if (item.StartsWith("Trace log level:"))
                 {
