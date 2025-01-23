@@ -12,9 +12,8 @@ namespace TingenCommander
     /// </summary>
     internal class Configuration
     {
-        public bool AdminMode { get; set; }
         public string SessionRoot { get; set; }
-        public string TingenDataRoot { get; set; }
+        public string TngnData { get; set; }
 
         public string MainUrl { get; set; }
         public string DevUrl { get; set; }
@@ -40,9 +39,8 @@ namespace TingenCommander
         {
             return new Configuration
             {
-                AdminMode      = true,
                 SessionRoot    = @".\AppData\Session",
-                TingenDataRoot = "T:",
+                TngnData = "T:",
                 MainUrl        = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/main/src/Tingen_development.asmx.cs",
                 DevUrl         = "https://raw.githubusercontent.com/spectrum-health-systems/Tingen-Development/refs/heads/development/src/Tingen_development.asmx.cs"
             };

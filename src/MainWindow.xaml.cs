@@ -4,10 +4,10 @@
 // Documentation: https://github.com/spectrum-health-systems/Tingen-Documentation
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
-// ================================================================ 250121 =====
+// ================================================================ 250123 =====
 
-// u250121_code
-// u250109_documentation
+// u250123_code
+// u250123_documentation
 
 using System.Windows;
 using System.Windows.Media;
@@ -25,22 +25,31 @@ namespace TingenCommander
         {
             InitializeComponent();
 
-            /* The configuration file path is hard coded for now, and should not be modified.
-               */
-            const string configPath = @".\AppData\TingenCommanderSettings.json";
+            Session.Start();
 
-            var session = new Session();
+            //CommanderPaths cmdrPath = CommanderPaths.Initialize();
 
-            Session.Start(session, configPath);
+           
+            
+            //Session.SetCommanderPaths(commanderPaths);
 
-            SetupMainWindow(session);
+
+
+            //const string commanderDataPath = @".\AppData\";
+            //const string configPath = $@"{commanderDataPath}\TingenCommanderSettings.json";
+
+
+
+
+           // Session session = Session.Start(configPath, serverPath);
+
+            //SetupMainWindow(session);
         }
 
         internal void SetupMainWindow(Session session)
         {
-            SetUserMode(session.Config.AdminMode);
-            SetEnvInfo(session.LiveDetails, lblModeLive, lblVersionLive, lblLastUpdatedLive);
-            SetEnvInfo(session.UatDetails, lblModeUat, lblVersionUat, lblLastUpdatedUat);
+            SetEnvInfo(session.Live, lblModeLive, lblVersionLive, lblLastUpdatedLive);
+            SetEnvInfo(session.Uat, lblModeUat, lblVersionUat, lblLastUpdatedUat);
 
             //lblMainVersion.Content = session.MainVersion;
             //lblDevVersion.Content  = session.DevVersion;
@@ -49,23 +58,23 @@ namespace TingenCommander
 
         private void SetEnvInfo(Environment sessionDetails, System.Windows.Controls.Label lblTMode, System.Windows.Controls.Label lblTVersion, System.Windows.Controls.Label lblTLastUpdated)
         {
-            if (sessionDetails.TingenMode.Equals("enabled", StringComparison.CurrentCultureIgnoreCase))
-            {
-                SetLabelProperties(lblTMode, "Enabled", Brushes.LightGreen, Brushes.DarkGreen);
-                //SetEnvironmentStatusControl(lblTMode,"Enabled", Brushes.LightGreen, Brushes.DarkGreen);
-            }
-            else if (sessionDetails.TingenMode.Equals("disabled", StringComparison.CurrentCultureIgnoreCase))
-            {
-                SetLabelProperties(lblTMode, "Disabled", Brushes.LightGray, Brushes.Black);
-                //SetEnvironmentStatusControl(lblTMode, "Disabled", Brushes.LightGray, Brushes.Black);
-            }
-            else
-            {
-                SetLabelProperties(lblTMode, "Unknown", Brushes.LightCoral, Brushes.Black);
-                //SetEnvironmentStatusControl(lblTMode, "Unknown", Brushes.LightCoral, Brushes.Black);
-            }
-            lblTVersion.Content     = sessionDetails.TingenVersion;
-            lblTLastUpdated.Content = sessionDetails.TingenLastUpdated;
+            //if (sessionDetails.TingenMode.Equals("enabled", StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    SetLabelProperties(lblTMode, "Enabled", Brushes.LightGreen, Brushes.DarkGreen);
+            //    //SetEnvironmentStatusControl(lblTMode,"Enabled", Brushes.LightGreen, Brushes.DarkGreen);
+            //}
+            //else if (sessionDetails.TingenMode.Equals("disabled", StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    SetLabelProperties(lblTMode, "Disabled", Brushes.LightGray, Brushes.Black);
+            //    //SetEnvironmentStatusControl(lblTMode, "Disabled", Brushes.LightGray, Brushes.Black);
+            //}
+            //else
+            //{
+            //    SetLabelProperties(lblTMode, "Unknown", Brushes.LightCoral, Brushes.Black);
+            //    //SetEnvironmentStatusControl(lblTMode, "Unknown", Brushes.LightCoral, Brushes.Black);
+            //}
+            //lblTVersion.Content     = sessionDetails.TingenVersion;
+            //lblTLastUpdated.Content = sessionDetails.TingenLastUpdated;
         }
 
         //private void SetEnvironmentControls(Label lblTMode, string mode, Label lblTVersion, string version, Label lblTLastUpdated, string lastUpdated)
@@ -108,5 +117,41 @@ namespace TingenCommander
             label.Background = background;
             label.Foreground = foreground;
         }
+
+        /// <summary>
+        /// Set constants.
+        /// </summary>
+        /// <returns></returns>
+        //internal Dictionary<string, string> SetCommanderPaths()
+        //{
+        //    /*XMLDOC
+        //       * There are a bunch of paths that need to be set when Tingen Commander runs, and we will set them here so they are all in one
+        //       * place.
+        //       *
+        //       * The configuration file should always be located in the "TingenCommander\AppData\" directory.
+        //       *
+        //       * Tingen Commander has two modes:
+        //       *
+        //       * 1. Standard User mode
+        //       * 2. Administrator mode
+        //       *
+        //       * By default, Tingen Commander runs in "Standard User mode", which disables some of the more advanced features.
+        //       *
+        //       * When run on the server that hosts the Tingen web service, Tingen Commander runs in "Administrator mode", which enables all
+        //       * features.
+        //       */
+
+        //    const string commanderRoot = @".\AppData";
+
+        //    Dictionary<string, string> commanderPaths = new()
+        //    {
+        //        { "configPath",        $@"{commanderRoot}\TingenCommanderSettings.json" },
+        //        { "serverPath",        $@"C:\TingenData\" },
+        //        { "liveCommanderFile", $@"{commanderRoot}\Admin\LIVE.commander" },
+        //        { "uatCommanderFile",  $@"{commanderRoot}\Admin\UAT.commander" }
+        //    };
+
+        //    return commanderPaths;
+        //}
     }
 }

@@ -7,9 +7,9 @@ namespace TingenCommander
 {
     internal class Environment
     {
-        public string TingenVersion { get; set; }
-        public string TingenLastUpdated { get; set; }
-        public string TingenMode { get; set; }
+        public string ServiceVersion { get; set; }
+        public string ServiceLastUpdated { get; set; }
+        public string ServiceMode { get; set; }
         public string TraceLevel { get; set; }
         public string TraceDelay { get; set; }
 
@@ -26,28 +26,26 @@ namespace TingenCommander
 
             foreach (var item in rawData)
             {
-                if (item.StartsWith("Service version:")) // put ":" in document
-                {
-                    environmentDetails.TingenVersion = item.Replace("Service version:", "").Trim();
-                }
-                else if (item.StartsWith("Service updated:"))
-                {
-                    environmentDetails.TingenLastUpdated = item.Replace("Service updated:", "").Trim();
-                }
-                else if (item.StartsWith("Service mode:"))
-                {
-                    environmentDetails.TingenMode = item.Replace("Service mode:", "").Trim();
-                }
-                else if (item.StartsWith("Trace log level:"))
-                {
-                    environmentDetails.TraceLevel = item.Replace("Trace log level:", "").Trim();
-                }
-                else if (item.StartsWith("Trace log delay:"))
-                {
-                    environmentDetails.TraceDelay = item.Replace("Trace log delay:", "").Trim();
-                }
+                //if (item.StartsWith("Service version:")) // put ":" in document
+                //{
+                //    environmentDetails.TingenVersion = item.Replace("Service version:", "").Trim();
+                //}
+                //else if (item.StartsWith("Service updated:"))
+                //{
+                //    environmentDetails.TingenLastUpdated = item.Replace("Service updated:", "").Trim();
+                //}
+                //else if (item.StartsWith("Service mode:"))
+                //{
+                //    environmentDetails.TingenMode = item.Replace("Service mode:", "").Trim();
+                //}
+                //else if (item.StartsWith("Trace log level:"))
+                //{
+                //    environmentDetails.TraceLevel = item.Replace("Trace log level:", "").Trim();
+                //}
+                //else if (item.StartsWith("Trace log delay:"))
+                //{
+                //    environmentDetails.TraceDelay = item.Replace("Trace log delay:", "").Trim();
             }
-
             return environmentDetails;
         }
     }

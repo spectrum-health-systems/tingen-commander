@@ -1,74 +1,69 @@
-﻿// u250121_code
-// u250109_documentation
+﻿// u250123_code
+// u250123_documentation
 
 using System.IO;
 using System.Windows;
-using System;
 
 namespace TingenCommander
 {
+    /// <summary>
+    /// Session details.
+    /// </summary>
     internal class Session
     {
+        public Dictionary<string, string> CmdrPath { get; set; }
         public Configuration Config { get; set; }
-        public string MainVersion { get; set; }
-        public string DevVersion { get; set; }
-        public Environment LiveDetails { get; set; }
-        public Environment UatDetails { get; set; }
+        public string SessionDataRoot { get; set; }
+        public string TingenDataRoot
+        public Repository Repo { get; set; }
+        public Environment Live { get; set; }
+        public Environment Uat  { get; set; }
 
-        internal static void Start(Session cmdrSesh, string configPath)
+        internal static Session Start()
         {
-            cmdrSesh.Config = Configuration.Load(configPath);
+            Paths cmdrPaths = new();
 
-            /* Administrator mode is only available when Tingen Commander is run on the same machine that hosts the Tingen web service.
-               * The Tingen web service stores data in the "C:\TingenData" directory, which is hardcoded here since that's where it should
-               * always be located.
-               */
-            const string adminModePath = @"C:\TingenData\";
+            Paths.Initialize(cmdrPaths);
 
-            if (cmdrSesh.Config.AdminMode)
-            {
-                if (Directory.Exists(adminModePath))
-                {
-                    cmdrSesh.Config.TingenDataRoot = adminModePath;
-                }
-                else
-                {
-                    var msg = Catalog.MsgAdminModeError();
+            Configuration cmdrConfig = Configuration.Load(cmdrPaths.CmdrConfigFile);
 
-                    MessageBox.Show(msg, "Administrator mode error!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Application.Current.Shutdown(2);
-                }
-            }
-            else
-            {
-                if (!Directory.Exists(cmdrSesh.Config.TingenDataRoot))
-                {
-                    var msg = Catalog.MsgStandardModeError(cmdrSesh.Config.TingenDataRoot);
-
-                    MessageBox.Show(msg, "Standard User mode error!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Application.Current.Shutdown(2);
-                }
-
-                //cmdrSesh.Config.TingenDataRoot = @"T:\";
-            }
+            Paths.Update(cmdrPaths, cmdrConfig.TngnData);
 
 
-            Reset(cmdrSesh.Config.SessionRoot);
 
-            cmdrSesh.MainVersion = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.MainUrl);
-            cmdrSesh.DevVersion  = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.DevUrl);
 
-            var liveSettingsFile = $@"{cmdrSesh.Config.TingenDataRoot}\Admin\LIVE.commander";
+            //Session cmdrSesh = new();
 
-            cmdrSesh.LiveDetails = Environment.GetEnvironmentDetails(liveSettingsFile);
+            //Configuration commanderConfig = Configuration.Load(configPath);
 
-            var uatSettingsFile = $@"{cmdrSesh.Config.TingenDataRoot}\Admin\UAT.commander";
+            //x cmdrSesh.Config = Configuration.Load(configPath);
 
-            cmdrSesh.UatDetails = Environment.GetEnvironmentDetails(uatSettingsFile);
+
+
+            ////////Reset(commanderConfig.TingenDataRoot);
+
+            ////////var liveSettingsFile = $@"{commanderConfig.TingenDataRoot}\Admin\LIVE.commander";
+
+            ////////var uatSettingsFile = $@"{commanderConfig.TingenDataRoot}\Admin\UAT.commander";
+
+
+            //Session newSession = new()
+            //{
+            //    Config      = commanderConfig,
+            //    Live = Environment.GetEnvironmentDetails(liveSettingsFile),
+            //    Uat  = Environment.GetEnvironmentDetails(uatSettingsFile),
+            //    MainVersion = Repository.Asmx.GetVersion(commanderConfig.SessionRoot, commanderConfig.MainUrl),
+            //    DevVersion  = Repository.Asmx.GetVersion(commanderConfig.SessionRoot, commanderConfig.DevUrl)
+            //};
+
+
+            //cmdrSesh.MainVersion = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.MainUrl);
+            //cmdrSesh.DevVersion  = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.DevUrl);
+
+
+            Session newSession = new();
+            return newSession;
         }
-
-
-
 
         internal static void Reset(string sessionRoot)
         {

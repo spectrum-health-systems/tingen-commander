@@ -5,7 +5,7 @@ using System.IO;
 
 using TingenCommander.Du;
 
-namespace TingenCommander.Repository
+namespace TingenCommander
 {
     internal class Asmx
     {
