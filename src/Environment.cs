@@ -1,52 +1,49 @@
-﻿// u250121_code
-// u250109_documentation
+﻿// u250123_code
+// u250123_documentation
 
 using System.IO;
+
+using TingenCommander.Du;
 
 namespace TingenCommander
 {
     internal class Environment
     {
-        public string ServiceVersion { get; set; }
-        public string ServiceLastUpdated { get; set; }
-        public string ServiceMode { get; set; }
-        public string TraceLevel { get; set; }
-        public string TraceDelay { get; set; }
+        public string SvcVersion { get; set; }
+        public string SvcBuild { get; set; }
+        public string SvcUpdated{ get; set; }
+        public string SvcMode { get; set; }
+        public string TraceLogLevel { get; set; }
+        public string TraceLogDelay { get; set; }
 
-        internal static Environment GetEnvironmentDetails(string filePath)
+        internal static Environment Load(string environmentFilePath)
         {
-            string[] rawData = null;
-
-            Environment environmentDetails = new();
-
-            if (File.Exists(filePath))
+            if (!File.Exists(environmentFilePath))
             {
-                rawData = File.ReadAllLines(filePath);
+                Create(environmentFilePath);
             }
 
-            foreach (var item in rawData)
+            return DuJson.ImportFromLocalFile<Environment>(environmentFilePath);
+        }
+
+        internal static void Create(string environmentFilePath)
+        {
+            var defaultEnvironment = Build();
+
+            DuJson.ExportToLocalFile<Environment>(defaultEnvironment, environmentFilePath);
+        }
+
+        internal static Environment Build()
+        {
+            return new Environment
             {
-                //if (item.StartsWith("Service version:")) // put ":" in document
-                //{
-                //    environmentDetails.TingenVersion = item.Replace("Service version:", "").Trim();
-                //}
-                //else if (item.StartsWith("Service updated:"))
-                //{
-                //    environmentDetails.TingenLastUpdated = item.Replace("Service updated:", "").Trim();
-                //}
-                //else if (item.StartsWith("Service mode:"))
-                //{
-                //    environmentDetails.TingenMode = item.Replace("Service mode:", "").Trim();
-                //}
-                //else if (item.StartsWith("Trace log level:"))
-                //{
-                //    environmentDetails.TraceLevel = item.Replace("Trace log level:", "").Trim();
-                //}
-                //else if (item.StartsWith("Trace log delay:"))
-                //{
-                //    environmentDetails.TraceDelay = item.Replace("Trace log delay:", "").Trim();
-            }
-            return environmentDetails;
+                SvcVersion    = "YY.MM.x.y",
+                SvcBuild      = "YYMMDD.HHMM",
+                SvcUpdated    = "MM/DD/YYYY HH:MM:SS AM",
+                SvcMode       = "not-set",
+                TraceLogLevel = "0",
+                TraceLogDelay = "0"
+            };
         }
     }
 }

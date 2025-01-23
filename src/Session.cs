@@ -2,24 +2,32 @@
 // u250123_documentation
 
 using System.IO;
-using System.Windows;
 
 namespace TingenCommander
 {
-    /// <summary>
-    /// Session details.
-    /// </summary>
+    /// <summary>The Tingen session object, and stuff related to it.</summary>
     internal class Session
     {
-        public Dictionary<string, string> CmdrPath { get; set; }
+        public bool AdminMode { get; set; }
+        /// <summary>A dictionary of paths required by Tingen Commander.</summary>
+        public Paths CmdrPath { get; set; }
+
+        /// <summary>The Tingen Commander configuration object.</summary>
         public Configuration Config { get; set; }
-        public string SessionDataRoot { get; set; }
-        public string TingenDataRoot
+
+        /// <summary>The Tingen Commander repository object.</summary>
+        /// <remarks>Not currently used.</remarks>
         public Repository Repo { get; set; }
+
+        /// <summary>The Tingen Commander environment object for LIVE.</summary>
         public Environment Live { get; set; }
+
+        /// <summary>The Tingen Commander environment object for UAT./summary>
         public Environment Uat  { get; set; }
 
-        internal static Session Start()
+        /// <summary>Starts a new Tingen Commander session.</summary>
+        /// <returns>The session object.</returns>
+        internal static Session Create()
         {
             Paths cmdrPaths = new();
 
@@ -27,42 +35,18 @@ namespace TingenCommander
 
             Configuration cmdrConfig = Configuration.Load(cmdrPaths.CmdrConfigFile);
 
-            Paths.Update(cmdrPaths, cmdrConfig.TngnData);
+            Paths.Update(cmdrPaths, cmdrConfig.TngnSvcData);
 
+            Session cmdrSession = new Session
+            {
+                CmdrPath = cmdrPaths,
+                Config   = cmdrConfig,
+                Repo     = new Repository()
+            };
 
+            cmdrSession.AdminMode = cmdrPaths.TngnSvcData == cmdrPaths.AdminModePath;
 
-
-            //Session cmdrSesh = new();
-
-            //Configuration commanderConfig = Configuration.Load(configPath);
-
-            //x cmdrSesh.Config = Configuration.Load(configPath);
-
-
-
-            ////////Reset(commanderConfig.TingenDataRoot);
-
-            ////////var liveSettingsFile = $@"{commanderConfig.TingenDataRoot}\Admin\LIVE.commander";
-
-            ////////var uatSettingsFile = $@"{commanderConfig.TingenDataRoot}\Admin\UAT.commander";
-
-
-            //Session newSession = new()
-            //{
-            //    Config      = commanderConfig,
-            //    Live = Environment.GetEnvironmentDetails(liveSettingsFile),
-            //    Uat  = Environment.GetEnvironmentDetails(uatSettingsFile),
-            //    MainVersion = Repository.Asmx.GetVersion(commanderConfig.SessionRoot, commanderConfig.MainUrl),
-            //    DevVersion  = Repository.Asmx.GetVersion(commanderConfig.SessionRoot, commanderConfig.DevUrl)
-            //};
-
-
-            //cmdrSesh.MainVersion = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.MainUrl);
-            //cmdrSesh.DevVersion  = Repository.Asmx.GetVersion(cmdrSesh.Config.SessionRoot, cmdrSesh.Config.DevUrl);
-
-
-            Session newSession = new();
-            return newSession;
+            return cmdrSession;
         }
 
         internal static void Reset(string sessionRoot)
