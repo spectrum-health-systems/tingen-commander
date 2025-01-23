@@ -33,11 +33,13 @@ namespace TingenCommander
         ///     </list>
         ///   </para>
         ///   <para>
-        ///   By design, any server that hosts the Tingen web service has a directory named "C:\TingenData", where<br/>
-        ///   Tingen-related data is stored. If you run Tingen Commander on a machine that has a "C:\TingenData",<br/>
+        ///   By design, any server that hosts the Tingen web service has a directory named <c>"C:\TingenData"</c>, where<br/>
+        ///   Tingen-related data is stored. If you run Tingen Commander on a machine that has a <c>"C:\TingenData"</c>,<br/>
         ///   Tingen Commander will run in "Administrator Mode", which enables all functionality.<br/>
         ///   <br/>
-        ///   If the "C:\TingenData" directory does not exist, Tingen Commander will run in "Standard User Mode".
+        ///   If the <c>"C:\TingenData"</c> directory does not exist, Tingen Commander will run in "Standard User Mode".<br/>
+        ///   <br/>
+        ///   The <c>Paths.Update()</c> method will build upon this later.
         ///   </para>
         /// </remarks>
         /// <returns>A dictionary containing the initial Tingen Commander paths.</returns>
@@ -59,8 +61,8 @@ namespace TingenCommander
         /// <param name="tngnData">The path to Tingen Data location.</param>
         /// <remarks>
         ///   <para>
-        ///     The Paths.Initialize() method creates the initial Tingen Commander paths, and this method builds upon those,
-        ///     concentrating on the following:
+        ///     The <c>Paths.Initialize()</c> method creates the initial Tingen Commander paths, and this method builds<br/>
+        ///     upon those, concentrating on the following:
         ///     <list type="bullet">
         ///       <item>TngnDataRoot:</item>
         ///       <description>The root directory all Tingen web service data.</description>
@@ -88,15 +90,46 @@ namespace TingenCommander
             return paths;
         }
 
-        internal static string SetTngnDataPath(string tngnServer, string tngnData)
+        /// <summary>Determine the true path to Tingen Data.</summary>
+        /// <param name="tngnAdminModePath">The TingenData path on a server hosting the Tingen web service.</param>
+        /// <param name="configTngnDataRoot">The TingenData path defined in the Tingen Commander configuration file.</param>
+        /// <remarks>
+        ///   <para>
+        ///     When Tingen Commander starts, it needs to know where the Tingen web service stores it's data. In general,<br/>
+        ///     when you run Tingen Commander on a workstation, that location will be what is defined in the configuration<br/>
+        ///     file. However, if you run Tingen Commander on the server that hosts the Tingen web service, the location<br/>
+        ///     will be <c>C:\TingenData</c>.<br/>
+        ///     <br/>
+        ///     This method sets:
+        ///     <list type="bullet">
+        ///       <item>
+        ///         If <c>C:\TingenData</c> exists, <c>TngnDataRoot</c> is set to <c>C:\TingenData</c>
+        ///       </item>
+        ///       <item>
+        ///         If <c>C:\TingenData</c> does not not exist, but the path defined in the configuration file does,<br/>
+        ///         <c>TngnDataRoot</c> is set to the value in the configuration file.
+        ///       </item>
+        ///       <item>
+        ///         If neither <c>C:\TingenData</c> nor the value in the configuration file exist, the user is
+        ///         notified, and Tingen Commander exits.
+        ///       </item>
+        ///     </list>
+        ///   </para>
+        /// </remarks>
+        /// <returns>The true path to Tingen Data.</returns>
+        internal static string SetTngnDataPath(string tngnAdminModePath, string configTngnDataRoot)
         {
-            if (Directory.Exists(tngnServer))
+            if (Directory.Exists(tngnAdminModePath))
             {
-                return tngnServer;
+                return tngnAdminModePath;
             }
-            else if (!Directory.Exists(tngnData))
+            else if (Directory.Exists(configTngnDataRoot))
             {
-                var msg = Catalog.ModeError(tngnData);
+                return configTngnDataRoot;
+            }
+            else
+            {
+                var msg = Catalog.ModeError(tngnAdminModePath, configTngnDataRoot);
                 MessageBox.Show(msg, "Missing required directories!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
