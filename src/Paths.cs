@@ -18,6 +18,29 @@ namespace TingenCommander
         public string LiveDetailFile { get; set; }
         public string UatDetailFile { get; set; }
 
+        /// <summary>Create the initial Tingen Commander paths.</summary>
+        /// <param name="paths">The dictionary that contains  the Tingen Commander paths.</param>
+        /// <remarks>
+        ///   <para>
+        ///     When Tingen Commander starts, we setup some foundational paths that are used throughout the application:
+        ///     <list type="bullet">
+        ///       <item>CmdrRoot:</item>
+        ///       <description>The root directory for Tingen Commander. This is hard-coded as ".\AppData", and should not be modified.</description>
+        ///       <item>CmdrConfigFile:</item>
+        ///       <description>The full path to the "TingenCommanderSettings.json" configuration file.</description>
+        ///       <item>TngnAdminModePath:</item>
+        ///       <description>The TingenData path on a server hosting the Tingen web service".</description>
+        ///     </list>
+        ///   </para>
+        ///   <para>
+        ///   By design, any server that hosts the Tingen web service has a directory named "C:\TingenData", where Tingen-related data<br/>
+        ///   is stored. If you run Tingen Commander on a machine that has a "C:\TingenData", Tingen Commander will run in "Administrator<br/>
+        ///   Mode", which enables all functionality.<br/>
+        ///   <br/>
+        ///   If the "C:\TingenData" directory does not exist, Tingen Commander will run in "Standard User Mode".
+        ///   </para>
+        /// </remarks>
+        /// <returns>A dictionary containing the initial Tingen Commander paths. </returns>
         internal static Paths Initialize(Paths paths)
         {
             const string cmdrRoot = @".\AppData";
