@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Version>0.9.0</Version>
+    <Title>Tingen Commander</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AppData\img\TingenCommander_ORIGINAL.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppData\img\TingenCommander_ORIGINAL.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tingen-Lieutenant\src\TingenLieutenant.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppData\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
