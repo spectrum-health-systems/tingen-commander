@@ -8,21 +8,23 @@
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                                 Framework.Catalog
-//                                             Pre-created data for Tingen Commander
+//                                               Framework.WorkstationDirectories.cs
+//                                                           Workstation directories
 // u250311_code
 // u250311_documentation
 
 using System.IO;
-using System.Windows;
 
 namespace TingenCommander.Framework
 {
-    internal static class Directories
+    /// <summary>Does stuff with directories.</summary>
+    internal static class WorkstationDirectories
     {
-        internal static void VerifyRequired()
+        /// <summary>Verify the required directories exist, and create them if they don't.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void VerifyRequired(string root)
         {
-            foreach (var requiredDirectory in Catalog.RequiredDirectories(GetTngnCmdrRoot()))
+            foreach (var requiredDirectory in Catalog.RequiredWorkstationDirectories(root))
             {
                 if (!Directory.Exists(requiredDirectory))
                 {
@@ -31,9 +33,11 @@ namespace TingenCommander.Framework
             }
         }
 
-        internal static void RenameDirectories()
+        /// <summary>Rename directories.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void RenameDirectories(string root)
         {
-            foreach (var originalRenamePair in Catalog.RenamedDirectories(GetTngnCmdrRoot()))
+            foreach (var originalRenamePair in Catalog.RenamedWorkstationDirectories(root))
             {
                 if (Directory.Exists(originalRenamePair.Key))
                 {
@@ -42,30 +46,16 @@ namespace TingenCommander.Framework
             }
         }
 
-        internal static void RemoveDirectories()
+        /// <summary>Remove depreciated directories.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void RemoveDirectories(string root)
         {
-            foreach (var depreciatedDirectory in Catalog.DepreciatedDirectories(GetTngnCmdrRoot()))
+            foreach (var depreciatedDirectory in Catalog.DepreciatedWorkstationDirectories(root))
             {
                 if (Directory.Exists(depreciatedDirectory))
                 {
                     Directory.Delete(depreciatedDirectory, true);
                 }
-            }
-        }
-
-
-
-        internal static string GetTngnCmdrRoot()
-        {
-            if (File.Exists(@"./AppData/Runtime/tngncmdr.root"))
-            {
-                return File.ReadAllText("./AppData/Runtime/tngncmdr.root");
-            }
-            else
-            {
-                MessageBox.Show("The root directory for Tingen Commander has not been set. Please set the root directory in the settings.");
-                Application.Current.Shutdown();
-                return "";
             }
         }
     }

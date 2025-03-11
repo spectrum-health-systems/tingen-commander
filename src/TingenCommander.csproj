@@ -8,6 +8,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+<PropertyGroup>
+    <DebugType>embedded</DebugType>
+    <Version>0.1.0</Version>
+    <FileVersion>0.1.0</FileVersion>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+</PropertyGroup>
+
   <ItemGroup>
     <None Remove="AppData\Image\TingenCommander116x154.png" />
   </ItemGroup>
@@ -19,7 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AppData\Runtime\tngncmdr.root">
+    <None Update="AppData\Runtime\tngncmdr.rootpath">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="AppData\Runtime\tngn.servername">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
