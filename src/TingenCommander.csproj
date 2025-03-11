@@ -8,4 +8,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="AppData\Image\TingenCommander116x154.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppData\Image\TingenCommander116x154.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppData\Runtime\tngncmdr.root">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
