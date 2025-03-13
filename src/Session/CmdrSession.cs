@@ -1,53 +1,24 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
-using System.Windows;
-using System.Windows.Controls;
-
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Session
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    public class CmdrSession
     {
-        InitializeComponent();
+        public const string RootPath = "./AppData/Runtime/tngncmdr.rootpath";
 
-        var s = new Session.CmdrSession();
+        public const string HostName = "./AppData/Runtime/tngn.hostname";
 
-        //const string rootPathFile = "./AppData/Runtime/tngncmdr.rootpath";
-        //const string hostNameFile = "./AppData/Runtime/tngn.hostname";
-
-        var txbxControls = new Dictionary<string,TextBox>
-        {
-            { "txbxMachineName", txbxMachineName },
-            { "txbxMachineType", txbxMachineType },
-            { "txbxHostName",    txbxHostName }
-        };
-
-        //Runtime.SpinUp.Initialize(s, rootPathFile, hostNameFile, txbxControls);
-
-
-        Runtime.SpinUp.Initialize(s, txbxControls);
     }
 }

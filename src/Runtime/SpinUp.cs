@@ -12,6 +12,9 @@
 // u250313_code
 // u250313_documentation
 
+using System.IO;
+using System.Windows.Controls;
+
 using TingenCommander.Utility;
 
 namespace TingenCommander.Runtime
@@ -19,32 +22,42 @@ namespace TingenCommander.Runtime
     /// <summary>Logic to spin up a new instance of Tingen Commander.</summary>
     internal static class SpinUp
     {
-        internal static void Initialize(string rootPathFile, string hostNameFile)
+        internal static void Initialize(Session.CmdrSession cmdrSession, Dictionary<string, TextBox> txbxControls)
+        //internal static void Initialize(Session.CmdrSession cmdrSession, string rootPathFile, string hostNameFile, Dictionary<string, TextBox> txbxControls)
         {
-            var cmdrRootPath = Framework.RootPath.GetPath(rootPathFile);
+            var rootPath    = Framework.RootPath.GetPath(cmdrSession.RootPath);
+            var hostName    = File.ReadAllText(hostNameFile);
+            var machineType = EnvironmentDetail.GetMachineType(hostName);
 
+            UpdateUserInterface(txbxControls, machineType, hostName);
 
-                switch (EnvironmentDetail.GetMachineType(hostNameFile))
-                {
-                    case "server":
-                        Server(cmdrRootPath);
-                        break;
+            switch (EnvironmentDetail.GetMachineType(hostNameFile))
+            {
+                case "server":
+                    ServerMode(rootPath);
+                    break;
 
-                    default:
-                        Workstation(cmdrRootPath);
-                        break;
-                }
-            
+                default:
+                    WorkstationMode(rootPath);
+                    break;
+            }
         }
 
-        internal static void Server(string rootPath)
+        internal static void UpdateUserInterface(Dictionary<string, TextBox> txbxControls, string machineType, string hostName)
+        {
+            txbxControls["txbxMachineName"].Text = Environment.MachineName;
+            txbxControls["txbxMachineType"].Text = machineType.ToUpper();
+            txbxControls["txbxHostName"].Text    = hostName;
+        }
+
+        internal static void ServerMode(string rootPath)
         {
             Framework.Directories.Verify(Framework.ServerMode.Required(rootPath));
             Framework.Directories.Rename(Framework.ServerMode.Renamed(rootPath));
             Framework.Directories.Remove(Framework.ServerMode.Removed(rootPath));
         }
 
-        internal static void Workstation(string rootPath)
+        internal static void WorkstationMode(string rootPath)
         {
             Framework.Directories.Verify(Framework.WorkstationMode.Required(rootPath));
             Framework.Directories.Rename(Framework.WorkstationMode.Renamed(rootPath));

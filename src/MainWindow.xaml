@@ -1,23 +1,23 @@
 ﻿<!--
     ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
     ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
-       ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-       ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
-       ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
-       ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
-     ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
+    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
+    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
+    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
+    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+    ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
     ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
     ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
     ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
     ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
-     ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-                                                           Tingen Web Service Utility
-                                                            Development Release 0.1.0
-
+    ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+    Tingen Web Service Utility
+    Development Release 0.1.0
+    
     https://github.com/APrettyCoolProgram/Tingen-Commander
     Copyright (c) A Pretty Cool Program. All rights reserved.
     Licensed under the Apache 2.0 license.
-
+    
     u250313_code
     u250313_documentation
 -->
@@ -30,8 +30,8 @@
     xmlns:local="clr-namespace:TingenCommander"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Tingen Commander v0.1.0"
-    Width="800"
-    Height="450"
+    Width="1000"
+    Height="600"
     mc:Ignorable="d">
     <Grid>
         <!--  Tingen Commander logo  -->
@@ -47,5 +47,127 @@
                 <ImageBrush ImageSource="/AppData/Image/TingenCommander116x154.png" />
             </Image.OpacityMask>
         </Image>
+
+        <Label
+            x:Name="lblLocalMachine"
+            Width="184"
+            Margin="10,260,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Background="Black"
+            Content="Local machine"
+            Foreground="White" />
+        <Label
+            x:Name="lblMachineName"
+            Width="50"
+            Margin="10,287,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Name"
+            Foreground="White" />
+        <TextBox
+            x:Name="txbxMachineName"
+            Width="135"
+            Height="28"
+            Margin="59,287,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label
+            x:Name="lblMachineType"
+            Width="50"
+            Margin="10,316,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Type"
+            Foreground="White" />
+        <TextBox
+            x:Name="txbxMachineType"
+            Width="135"
+            Height="28"
+            Margin="59,316,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Label
+            x:Name="lblWebServiceHost"
+            Width="184"
+            Margin="10,354,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Background="Black"
+            Content="Web Service Host"
+            Foreground="White" />
+        <Label
+            x:Name="lblHostName"
+            Width="50"
+            Margin="10,381,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            Background="Black"
+            Foreground="White"
+            BorderThickness="1"
+            Content="Name" />
+        <TextBox
+            x:Name="txbxHostName"
+            Width="135"
+            Height="28"
+            Margin="59,381,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
     </Grid>
 </Window>

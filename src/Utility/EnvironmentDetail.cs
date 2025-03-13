@@ -62,6 +62,8 @@ namespace TingenCommander.Utility
         /// <returns>The machine type.</returns>
         internal static string GetMachineType(string hostName)
         {
+            File.WriteAllText("test.txt", hostName);
+
             return (Environment.MachineName == hostName)
                    ? "server"
                    : "workstation";

@@ -16,19 +16,12 @@
 </PropertyGroup>
 
 <ItemGroup>
-  <None Remove="AppData\README.md" />
-  <None Remove="AppData\Runtime\README.md" />
+  <None Remove="AppData\Image\TingenCommander116x154.png" />
   <None Remove="AppData\Runtime\tngncmdr.rootpath" />
 </ItemGroup>
 
 <ItemGroup>
   <Content Include="AppData\Image\TingenCommander116x154.png">
-    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-  </Content>
-  <Content Include="AppData\README.md">
-    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-  </Content>
-  <Content Include="AppData\Runtime\README.md">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
   <Content Include="AppData\Runtime\tngncmdr.rootpath">
