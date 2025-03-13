@@ -1,40 +1,64 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
+using System.IO;
 using System.Windows;
 
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Framework
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    internal static partial class RootPath
     {
-        InitializeComponent();
+        /// <summary>Get the root directory for Tingen Commander.</summary>
+        /// <remarks>
+        ///   <para>
+        ///     The Tingen Commander root directory is stored in a file called <c>tngncmdr.root</c> in the <c>AppData/Runtime</c> directory.
+        ///   </para>
+        /// </remarks>
+        /// <returns>The root directory for Tingen Commander.</returns>
+        internal static string GetPath(string rootPathFile)
+        {
+            if (File.Exists(rootPathFile))
+            {
+                var rootPath = File.ReadAllText(rootPathFile);
 
-        const string rootPathFile = @"./AppData/Runtime/tngncmdr.rootpath";
-        const string hostNameFile = @"./AppData/Runtime/tngn.hostname";
+                if (Directory.Exists(rootPath))
+                {
+                    return rootPath;
+                }
+                else
+                {
+                    MessageBoxResult createRootPath = MessageBox.Show(Msg_CmdrRootInvalid(rootPath), "Invalid root path", MessageBoxButton.OKCancel);
 
-        Runtime.SpinUp.Initialize(rootPathFile, hostNameFile);
+                    if (createRootPath == MessageBoxResult.Cancel)
+                    {
+                        System.Environment.Exit(1);
+                    }
+                    else
+                    {
+                        Directory.CreateDirectory(rootPath);
+                    }
+
+                    return rootPath;
+                }
+            }
+            else
+            {
+                MessageBox.Show(Msg_CmdrRootFileMissing());
+                System.Environment.Exit(1);
+
+                return "_shutdown_";
+            }
+        }
     }
 }

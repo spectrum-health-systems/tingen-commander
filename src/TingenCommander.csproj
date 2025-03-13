@@ -10,13 +10,15 @@
 
 <PropertyGroup>
     <DebugType>embedded</DebugType>
-    <Version>0.1.0</Version>
-    <FileVersion>0.1.0</FileVersion>
+    <Version>0.2.0</Version>
+    <FileVersion>0.2.0</FileVersion>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
 </PropertyGroup>
 
   <ItemGroup>
     <None Remove="AppData\Image\TingenCommander116x154.png" />
+    <None Remove="AppData\Runtime\tngn.hostname" />
+    <None Remove="AppData\Runtime\tngncmdr.rootpath" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,12 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AppData\Runtime\tngncmdr.rootpath">
+    <Resource Include="AppData\Runtime\tngn.hostname">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="AppData\Runtime\tngn.servername">
+    </Resource>
+    <EmbeddedResource Include="AppData\Runtime\tngncmdr.rootpath">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

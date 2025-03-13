@@ -1,40 +1,61 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
-using System.Windows;
+using System.IO;
 
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Framework
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    internal static class Directories
     {
-        InitializeComponent();
 
-        const string rootPathFile = @"./AppData/Runtime/tngncmdr.rootpath";
-        const string hostNameFile = @"./AppData/Runtime/tngn.hostname";
+        /// <summary>Verify the required directories exist, and create them if they don't.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void Verify(List<string> directories)
+        {
+            foreach (var directory in directories)
+            {
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+            }
+        }
 
-        Runtime.SpinUp.Initialize(rootPathFile, hostNameFile);
+        /// <summary>Rename directories.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void Rename(Dictionary<string,string> directories)
+        {
+            foreach (var directory in directories)
+            {
+                if (Directory.Exists(directory.Key))
+                {
+                    Directory.Move(directory.Key, directory.Value);
+                }
+            }
+        }
+
+        /// <summary>Remove depreciated directories.</summary>
+        /// <param name="root">The Tingen Commander root directory.</param>
+        internal static void Remove(List<string> directories)
+        {
+            foreach (var directory in directories)
+            {
+                if (Directory.Exists(directory))
+                {
+                    Directory.Delete(directory, true);
+                }
+            }
+        }
     }
 }

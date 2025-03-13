@@ -8,46 +8,14 @@
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                                 Framework.Catalog
-//                                             Pre-created data for Tingen Commander
-// u250311_code
-// u250311_documentation
-
-using System.Windows;
+//
+// u250313_code
+// u250313_documentation
 
 namespace TingenCommander.Framework
 {
-    internal static class Catalog
+    internal static partial class ServerMode
     {
-        /// <summary>Returns a list of required workstation directories.</summary>
-        /// <remarks>
-        ///   <para>
-        ///     This is a list of required workstation directories for Tingen Commander<br/>
-        ///     <br/>
-        ///     This list was last updated <b>March 11, 2025</b>.<br/>
-        ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
-        ///     <br/>
-        ///     If you need to add a workstation directory, please add it to the list below.<br/>
-        ///     <br/>
-        ///     If you need to rename an existing workstation directory, please add it to the RenamedWorkstationDirectories() dictionary.<br/>
-        ///     <br/>
-        ///     If you need to remove an existing workstation directory, please add it to the DepreciatedWorkstationDirectories() list.<br/>
-        ///   </para>
-        ///   <para>
-        ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
-        ///   </para>
-        /// </remarks>
-        /// <returns>A list of required directories.</returns>
-        internal static List<string> RequiredWorkstationDirectories(string root)
-        {
-            return
-            [
-                $@"{root}/Commander",
-                $@"{root}/Commander/Logs"    
-            ];
-        }
-
 
         /// <summary>Returns a list of required server directories.</summary>
         /// <remarks>
@@ -55,27 +23,27 @@ namespace TingenCommander.Framework
         ///     This is a list of required server directories for the following:
         ///     <list type="bullet">
         ///       <item>The Tingen Web Service (LIVE)</item>
-        ///       <item>The Tingen Web Service (UAT)</item>  
+        ///       <item>The Tingen Web Service (UAT)</item>
         ///       <item>Tingen Commander</item>
         ///     </list>
         ///   </para>
         ///   <para>
         ///     This list was last updated <b>March 11, 2025</b>.<br/>
         ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
+        ///     These directories are hard coded here so there is one source of truth.<br/>
         ///     <br/>
         ///     If you need to add a server directory, please add it to the list below.<br/>
         ///     <br/>
-        ///     If you need to rename an existing server directory, please add it to the RenamedDirectories() dictionary.<br/>
+        ///     If you need to rename an existing server directory, please add it to the Renamed() dictionary.<br/>
         ///     <br/>
-        ///     If you need to remove an existing server directory, please add it to the DepreciatedDirectories() list.<br/>
+        ///     If you need to remove an existing server directory, please add it to the Removed() list.<br/>
         ///   </para>
         ///   <para>
         ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> RequiredServerDirectories(string root)
+        internal static List<string> Required(string root)
         {
             return
             [
@@ -141,51 +109,25 @@ namespace TingenCommander.Framework
             ];
         }
 
-        /// <summary>Provides a list of new workstation directory names.</summary>
+        /// <summary>Provides a list of server directories to be renamed.</summary>
         /// <remarks>
         ///   <para>
         ///     This list was last updated <b>March 11, 2025</b>.<br/>
         ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
-        ///     <br/>
-        ///     If you need to rename a workstation directory, please add it to the list below.<br/>
-        ///     <br/>
-        ///     If you need to add a new workstation directory, please add it to the RequiredDirectories() dictionary.<br/>
-        ///     <br/>
-        ///     If you need to remove an existing workstation directory, please add it to the DepreciatedDirectories() list.<br/>
-        ///   </para>
-        ///   <para>
-        ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
-        ///   </para>
-        /// </remarks>
-        /// <returns>A list of new directory names.</returns>
-        internal static Dictionary<string,string> RenamedWorkstationDirectories(string root)
-        {
-            return new Dictionary<string, string>()
-            {
-                { $@"{root}/OldName", $@"{root}/NewName" }
-            };
-        }
-
-        /// <summary>Provides a list of new server directory names.</summary>
-        /// <remarks>
-        ///   <para>
-        ///     This list was last updated <b>March 11, 2025</b>.<br/>
-        ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
+        ///     These directories are hard coded here so there is one source of truth.<br/>
         ///     <br/>
         ///     If you need to rename a server directory, please add it to the list below.<br/>
         ///     <br/>
-        ///     If you need to add a new server directory, please add it to the RequiredDirectories() dictionary.<br/>
+        ///     If you need to add a new server directory, please add it to the Required() dictionary.<br/>
         ///     <br/>
-        ///     If you need to remove an existing server irectory, please add it to the DepreciatedDirectories() list.<br/>
+        ///     If you need to remove an existing server directory, please add it to the Removed() list.<br/>
         ///   </para>
         ///   <para>
         ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
         ///   </para>
         /// </remarks>
         /// <returns>A list of new directory names.</returns>
-        internal static Dictionary<string, string> RenamedServerDirectories(string root)
+        internal static Dictionary<string, string> Renamed(string root)
         {
             return new Dictionary<string, string>()
             {
@@ -193,55 +135,29 @@ namespace TingenCommander.Framework
             };
         }
 
-        /// <summary>Returns a list of depreciated workstation directories to be removed.</summary>
+        /// <summary>Returns a list of server directories to be removed.</summary>
         /// <remarks>
         ///   <para>
         ///     This list was last updated <b>March 11, 2025</b>.<br/>
         ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
-        ///     <br/>
-        ///     If you need to remove a workstation directory, please add it to the list below.<br/>
-        ///     <br/>
-        ///     If you need to add a workstation directory, please add it to the list below.<br/>
-        ///     <br/>
-        ///     If you need to rename an existing workstation directory, please add it to the RenamedDirectories() dictionary.<br/>
-        ///   </para>
-        ///   <para>
-        ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
-        ///   </para>
-        /// </remarks>
-        /// <returns>A list of required directories.</returns>
-        internal static List<string> DepreciatedWorkstationDirectories(string root)
-        {
-            return
-            [
-                $@"{root}/DepreciatedName"
-            ];
-        }
-
-        /// <summary>Returns a list of depreciated server directories to be removed.</summary>
-        /// <remarks>
-        ///   <para>
-        ///     This list was last updated <b>March 11, 2025</b>.<br/>
-        ///     <br/>
-        ///     These directories are hardcoded here so there is one source of truth.<br/>
+        ///     These directories are har dcoded here so there is one source of truth.<br/>
         ///     <br/>
         ///     If you need to remove a server directory, please add it to the list below.<br/>
         ///     <br/>
-        ///     If you need to add a server directory, please add it to the list below.<br/>
+        ///     If you need to add a server directory, please add it to the Required() list.<br/>
         ///     <br/>
-        ///     If you need to rename an existing server directory, please add it to the RenamedDirectories() dictionary.<br/>
+        ///     If you need to rename an existing server directory, please add it to the Renamed() dictionary.<br/>
         ///   </para>
         ///   <para>
         ///     Whenever any of the directory dictionaries are modified, a new version of Tingen Commander should be released.
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> DepreciatedServerDirectories(string root)
+        internal static List<string> Removed(string root)
         {
             return
             [
-                $@"{root}/DepreciatedName"
+                $@"{root}/ToRemove"
             ];
         }
     }

@@ -1,40 +1,28 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
-using System.Windows;
-
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Utility
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    public static partial class EnvironmentDetail
     {
-        InitializeComponent();
 
-        const string rootPathFile = @"./AppData/Runtime/tngncmdr.rootpath";
-        const string hostNameFile = @"./AppData/Runtime/tngn.hostname";
 
-        Runtime.SpinUp.Initialize(rootPathFile, hostNameFile);
+        /// <summary>Let the user know the file that defines the name of the server that hosts the Tingen Web Service cannot be found.</summary>
+        /// <returns>A message letting the user know the file that defines the name of the server that hosts the Tingen Web Service cannot be found.</returns>
+        public static string Msg_ServerNameFileMissing() =>
+            $"The file that defines the name of the server that hosts the Tingen Web Service cannot be found.{Environment.NewLine}" +
+            Environment.NewLine +
+            $"Please verify the \"AppData\\Runtime\\tngncmdr.servername\" file exists and contains a valid server name.";
     }
 }

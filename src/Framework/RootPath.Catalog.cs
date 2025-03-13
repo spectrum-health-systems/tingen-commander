@@ -1,40 +1,36 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
-using System.Windows;
-
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Framework
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    internal static partial class RootPath
     {
-        InitializeComponent();
+        /// <summary>Let the user know the file that defines the Tingen Commander root directory cannot be found.</summary>
+        /// <returns>A message letting the user know the file that defines the Tingen Commander root directory cannot be found.</returns>
+        public static string Msg_CmdrRootFileMissing() =>
+            $"The file that defines the Tingen Commander root directory for cannot be found.{Environment.NewLine}" +
+            Environment.NewLine +
+            $"Please verify the \"AppData\\Runtime\\tngncmdr.rootpath\" file exists and contains a valid root directory for Tingen Commander.";
 
-        const string rootPathFile = @"./AppData/Runtime/tngncmdr.rootpath";
-        const string hostNameFile = @"./AppData/Runtime/tngn.hostname";
-
-        Runtime.SpinUp.Initialize(rootPathFile, hostNameFile);
+        /// <summary>Let the user know the defined root directory for Tingen Commander is not valid.</summary>
+        /// <returns>A message letting the user know the defined root directory for Tingen Commander is not valid.</returns>
+        public static string Msg_CmdrRootInvalid(string rootPath) =>
+            $"The Tingen Commander root directory defined in \"AppData\\Runtime\\tngncmdr.root\" cannot be found.{Environment.NewLine}" +
+            Environment.NewLine +
+            $"Would you like to create this directory now?{Environment.NewLine}" +
+            Environment.NewLine +
+            $"Click \"OK\" to create \"{rootPath}\"{Environment.NewLine}" +
+            $"Click \"Cancel\" to exit Tingen Commander.";
     }
 }

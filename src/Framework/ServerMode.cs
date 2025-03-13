@@ -1,40 +1,37 @@
 ﻿// ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
 // ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
 //    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-//    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
 //    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
 //    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 //  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
 // ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
-// ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
-
-//https://github.com/APrettyCoolProgram/Tingen-Commander
-//Copyright (c) A Pretty Cool Program. All rights reserved.
-//Licensed under the Apache 2.0 license.
 //
 // u250313_code
 // u250313_documentation
 
-using System.Windows;
-
-namespace TingenCommander;
-
-/// <summary>Main entry point for Tingen Commander.</summary>
-public partial class MainWindow : Window
+namespace TingenCommander.Framework
 {
-    /// <summary>Tingen Commander main window.</summary>
-    public MainWindow()
+    /// <summary>Logic related to the Tingen Commander frameworks when in Server mode.</summary>
+    /// <remarks>
+    ///   <para>
+    ///     This class spans multiple partial classes:
+    ///     <list type="bullet">
+    ///       <item>
+    ///         <term>Server.cs</term>
+    ///         <description>Class logic</description>
+    ///       </item>
+    ///       <item>
+    ///         <term>Server.Catalog.cs</term>
+    ///         <description>Preset data</description>
+    ///       </item>
+    ///     </list>
+    ///   </para>
+    /// </remarks>
+    internal static partial class ServerMode
     {
-        InitializeComponent();
-
-        const string rootPathFile = @"./AppData/Runtime/tngncmdr.rootpath";
-        const string hostNameFile = @"./AppData/Runtime/tngn.hostname";
-
-        Runtime.SpinUp.Initialize(rootPathFile, hostNameFile);
+        // No logic here.
     }
 }

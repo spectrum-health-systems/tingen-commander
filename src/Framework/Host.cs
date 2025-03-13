@@ -8,54 +8,48 @@
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                               Framework.WorkstationDirectories.cs
-//                                                           Workstation directories
-// u250311_code
-// u250311_documentation
+//
+// u250313_code
+// u250313_documentation
 
 using System.IO;
+using System.Windows;
 
 namespace TingenCommander.Framework
 {
-    /// <summary>Does stuff with directories.</summary>
-    internal static class WorkstationDirectories
+    /// <summary>Logic related to the Tingen Web Service host.</summary>
+    /// <remarks>
+    ///   <para>
+    ///     This class spans multiple partial classes:
+    ///     <list type="bullet">
+    ///       <item>
+    ///         <term>Host.cs</term>
+    ///         <description>Class logic</description>
+    ///       </item>
+    ///       <item>
+    ///         <term>Host.Catalog.cs</term>
+    ///         <description>Preset data</description>
+    ///       </item>
+    ///     </list>
+    ///   </para>
+    /// </remarks>
+    internal static partial class Host
     {
-        /// <summary>Verify the required directories exist, and create them if they don't.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void VerifyRequired(string root)
+        /// <summary>Get the name of the machine that hosts the Tingen Web Service.</summary>
+        /// <param name="hostNameFile">Contains the name of machine that hosts the Tingen Web Service.</param>
+        /// <returns>The name of the machine that hosts the Tingen Web Service.</returns>
+        internal static string GetHostName(string hostNameFile)
         {
-            foreach (var requiredDirectory in Catalog.RequiredWorkstationDirectories(root))
+            if (File.Exists(hostNameFile))
             {
-                if (!Directory.Exists(requiredDirectory))
-                {
-                    Directory.CreateDirectory(requiredDirectory);
-                }
+                return File.ReadAllText(hostNameFile);
             }
-        }
-
-        /// <summary>Rename directories.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void RenameDirectories(string root)
-        {
-            foreach (var originalRenamePair in Catalog.RenamedWorkstationDirectories(root))
+            else
             {
-                if (Directory.Exists(originalRenamePair.Key))
-                {
-                    Directory.Move(originalRenamePair.Key, originalRenamePair.Value);
-                }
-            }
-        }
+                MessageBox.Show(Msg_HostNameFileMissing());
+                System.Environment.Exit(1);
 
-        /// <summary>Remove depreciated directories.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void RemoveDirectories(string root)
-        {
-            foreach (var depreciatedDirectory in Catalog.DepreciatedWorkstationDirectories(root))
-            {
-                if (Directory.Exists(depreciatedDirectory))
-                {
-                    Directory.Delete(depreciatedDirectory, true);
-                }
+                return "_shutdown_";
             }
         }
     }

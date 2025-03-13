@@ -8,55 +8,47 @@
 // ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//                                                    Framework.ServerDirectories.cs
-//                                                                Server directories
-// u250311_code
-// u250311_documentation
+//
+// u250313_code
+// u250313_documentation
 
-using System.IO;
+using TingenCommander.Utility;
 
-namespace TingenCommander.Framework
+namespace TingenCommander.Runtime
 {
-    /// <summary>Does stuff with directories.</summary>
-    internal static class ServerDirectories
+    /// <summary>Logic to spin up a new instance of Tingen Commander.</summary>
+    internal static class SpinUp
     {
-        /// <summary>Verify the required directories exist, and create them if they don't.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void VerifyRequired(string root)
+        internal static void Initialize(string rootPathFile, string hostNameFile)
         {
-            foreach (var requiredDirectory in Catalog.RequiredServerDirectories(root))
-            {
-                if (!Directory.Exists(requiredDirectory))
+            var cmdrRootPath = Framework.RootPath.GetPath(rootPathFile);
+
+
+                switch (EnvironmentDetail.GetMachineType(hostNameFile))
                 {
-                    Directory.CreateDirectory(requiredDirectory);
+                    case "server":
+                        Server(cmdrRootPath);
+                        break;
+
+                    default:
+                        Workstation(cmdrRootPath);
+                        break;
                 }
-            }
+            
         }
 
-        /// <summary>Rename directories.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void RenameDirectories(string root)
+        internal static void Server(string rootPath)
         {
-            foreach (var originalRenamePair in Catalog.RenamedServerDirectories(root))
-            {
-                if (Directory.Exists(originalRenamePair.Key))
-                {
-                    Directory.Move(originalRenamePair.Key, originalRenamePair.Value);
-                }
-            }
+            Framework.Directories.Verify(Framework.ServerMode.Required(rootPath));
+            Framework.Directories.Rename(Framework.ServerMode.Renamed(rootPath));
+            Framework.Directories.Remove(Framework.ServerMode.Removed(rootPath));
         }
 
-        /// <summary>Remove depreciated directories.</summary>
-        /// <param name="root">The Tingen Commander root directory.</param>
-        internal static void RemoveDirectories(string root)
+        internal static void Workstation(string rootPath)
         {
-            foreach (var depreciatedDirectory in Catalog.DepreciatedServerDirectories(root))
-            {
-                if (Directory.Exists(depreciatedDirectory))
-                {
-                    Directory.Delete(depreciatedDirectory, true);
-                }
-            }
+            Framework.Directories.Verify(Framework.WorkstationMode.Required(rootPath));
+            Framework.Directories.Rename(Framework.WorkstationMode.Renamed(rootPath));
+            Framework.Directories.Remove(Framework.WorkstationMode.Removed(rootPath));
         }
     }
 }
