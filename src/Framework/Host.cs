@@ -44,7 +44,7 @@ namespace TingenCommander.Framework
             else
             {
                 MessageBox.Show(Msg_HostNameFileMissing());
-                System.Environment.Exit(1);
+                Environment.Exit(1);
 
                 return "_shutdown_";
             }

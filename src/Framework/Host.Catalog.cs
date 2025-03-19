@@ -21,5 +21,3 @@ namespace TingenCommander.Framework
             $"Please verify the \"AppData\\Runtime\\tngncmdr.hostname\" file exists and contains a valid host name.";
     }
 }
-
-

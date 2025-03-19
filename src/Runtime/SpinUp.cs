@@ -19,16 +19,22 @@ namespace TingenCommander.Runtime
     /// <summary>Logic to spin up a new instance of Tingen Commander.</summary>
     internal static class SpinUp
     {
+        /// <summary>Initialize the Tingen Commander environment.</summary>
+        /// <param name="cmdrSession">The Tingen Commander session object.</param>
+        /// <param name="txbxControls">A dictionary containing any TextBox controls that will be modified.</param>
+        /// <remarks>
+        /// <para>
+        /// </para>
+        /// </remarks>
         internal static void Initialize(Session.CmdrSession cmdrSession, Dictionary<string, TextBox> txbxControls)
-        //internal static void Initialize(Session.CmdrSession cmdrSession, string rootPathFile, string hostNameFile, Dictionary<string, TextBox> txbxControls)
         {
-            var rootPath    = Framework.RootPath.GetPath(cmdrSession.RootPath);
-            var hostName    = File.ReadAllText(hostNameFile);
+            var rootPath    = Framework.RootPath.GetPath(cmdrSession.RootPathFile);
+            var hostName    = File.ReadAllText(cmdrSession.HostNameFile);
             var machineType = EnvironmentDetail.GetMachineType(hostName);
 
             UpdateUserInterface(txbxControls, machineType, hostName);
 
-            switch (EnvironmentDetail.GetMachineType(hostNameFile))
+            switch (EnvironmentDetail.GetMachineType(cmdrSession.HostNameFile))
             {
                 case "server":
                     ServerMode(rootPath);
@@ -40,10 +46,8 @@ namespace TingenCommander.Runtime
             }
         }
 
-        /// <summary>
-        /// Update user interface.
-        /// </summary>
-        /// <param name="txbxControls">The txbx controls.</param>
+        /// <summary>Update user interface TextBox controls.</summary>
+        /// <param name="txbxControls">A dictionary containing any TextBox controls that will be modified.</param>
         /// <param name="machineType">The machine type.</param>
         /// <param name="hostName">The host name.</param>
         internal static void UpdateUserInterface(Dictionary<string, TextBox> txbxControls, string machineType, string hostName)

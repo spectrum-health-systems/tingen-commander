@@ -31,6 +31,6 @@ namespace TingenCommander.Framework
     /// </remarks>
     internal static partial class WorkstationMode
     {
-        // No logic here.
+        // No logic here yet.
     }
 }

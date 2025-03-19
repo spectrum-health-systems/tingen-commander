@@ -11,11 +11,31 @@
 
 namespace TingenCommander.Session
 {
+    /// <summary>Session object for Tingen Commander.</summary>
+    /// <remarks>
+    ///   <para>
+    ///     The <c>CmdrSession</c> object is used to all of the data that Tingen Commander needs to do its thing.
+    ///   </para>
+    /// </remarks>
     public class CmdrSession
     {
-        public const string RootPath = "./AppData/Runtime/tngncmdr.rootpath";
+        /// <summary>The file that contains the root path of the Tingen Commander environment.</summary>
+        /// <value>Default: "AppData/Runtime/tngn.rootpath"</value>
+        public string RootPathFile {get; set;}
 
-        public const string HostName = "./AppData/Runtime/tngn.hostname";
+        /// <summary>The file that contains the host name of the Tingen Web Service.</summary>
+        /// <value>Default: ""AppData/Runtime/tngn.hostname""</value>
+        public string HostNameFile { get; set; }
 
+        /// <summary>Create a new Tingen Commander session object.</summary>
+        /// <returns>A new Tingen Commander session object.</returns>
+        internal static CmdrSession New()
+        {
+            return new CmdrSession
+            {
+                RootPathFile = "AppData/Runtime/tngn.rootpath",
+                HostNameFile = "AppData/Runtime/tngn.hostname"
+            };
+        }
     }
 }

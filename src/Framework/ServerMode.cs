@@ -29,6 +29,6 @@ namespace TingenCommander.Framework
     /// </remarks>
     internal static partial class ServerMode
     {
-        // No logic here.
+        // No logic here yet.
     }
 }
