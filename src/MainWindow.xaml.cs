@@ -12,13 +12,12 @@
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 //                                                        Tingen Web Service Utility
 //                                                         Development Release 0.3.0
-
 //https://github.com/APrettyCoolProgram/Tingen-Commander
 //Copyright (c) A Pretty Cool Program. All rights reserved.
 //Licensed under the Apache 2.0 license.
-//
-// u250313_code
-// u250313_documentation
+
+// u250319_code
+// u250319_documentation
 
 using System.Windows;
 using System.Windows.Controls;
@@ -28,9 +27,7 @@ namespace TingenCommander;
 /// <summary>Main entry point for Tingen Commander.</summary>
 public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class.
-    /// </summary>
+    /// <summary>Initializes a new instance of the <see cref="MainWindow"/> class.</summary>
     public MainWindow()
     {
         InitializeComponent();
