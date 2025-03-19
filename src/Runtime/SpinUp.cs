@@ -9,8 +9,8 @@
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 //
-// u250313_code
-// u250313_documentation
+// u250317_code
+// u250317_documentation
 
 using System.IO;
 using System.Windows.Controls;
@@ -43,6 +43,12 @@ namespace TingenCommander.Runtime
             }
         }
 
+        /// <summary>
+        /// Update user interface.
+        /// </summary>
+        /// <param name="txbxControls">The txbx controls.</param>
+        /// <param name="machineType">The machine type.</param>
+        /// <param name="hostName">The host name.</param>
         internal static void UpdateUserInterface(Dictionary<string, TextBox> txbxControls, string machineType, string hostName)
         {
             txbxControls["txbxMachineName"].Text = Environment.MachineName;

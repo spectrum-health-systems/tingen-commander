@@ -11,7 +11,7 @@
 // ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
 //  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 //                                                        Tingen Web Service Utility
-//                                                         Development Release 0.1.0
+//                                                         Development Release 0.3.0
 
 //https://github.com/APrettyCoolProgram/Tingen-Commander
 //Copyright (c) A Pretty Cool Program. All rights reserved.
@@ -28,15 +28,17 @@ namespace TingenCommander;
 /// <summary>Main entry point for Tingen Commander.</summary>
 public partial class MainWindow : Window
 {
-    /// <summary>Tingen Commander main window.</summary>
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();
 
-        var s = new Session.CmdrSession();
+        var cmdrSession = new Session.CmdrSession();
 
-        //const string rootPathFile = "./AppData/Runtime/tngncmdr.rootpath";
-        //const string hostNameFile = "./AppData/Runtime/tngn.hostname";
+        /* DEVNOTE Defined here so there is one source of truth, and we can easily pass them to the SpinUp class.
+         */
 
         var txbxControls = new Dictionary<string,TextBox>
         {
@@ -45,9 +47,6 @@ public partial class MainWindow : Window
             { "txbxHostName",    txbxHostName }
         };
 
-        //Runtime.SpinUp.Initialize(s, rootPathFile, hostNameFile, txbxControls);
-
-
-        Runtime.SpinUp.Initialize(s, txbxControls);
+        Runtime.SpinUp.Initialize(cmdrSession, txbxControls);
     }
 }
