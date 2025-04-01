@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![logo](./.github/images/logos/TingenCommander_README.png)
+  ![logo](./.github/image/logo/)
 
 </div>
 
@@ -20,3 +20,18 @@ Web Service Host Mode runs on the server that hosts the Tingen Web Service, and 
 
   * Thing
   * Another thing
+
+
+# Using
+
+## The Tingen Commander root directory definition file
+
+The `/AppData/Runtime` directory must contain a file named `cmdr.rootpath`.
+
+If this file does not exist, you will be prompted to create it with the following default content:
+
+```
+C:\TingenWebService_Data
+```
+
+Do not modify this!

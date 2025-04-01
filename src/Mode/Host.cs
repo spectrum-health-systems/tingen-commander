@@ -6,11 +6,11 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250319_code
-// u250319_documentation
+// u250325_code
+// u250325_documentation
 
-namespace TingenCommander.Framework
-{
+namespace TingenCommander.Mode
+{ 
     /// <summary>Logic related to the Tingen Commander frameworks when in Server mode.</summary>
     /// <remarks>
     ///   <para>
@@ -27,7 +27,7 @@ namespace TingenCommander.Framework
     ///     </list>
     ///   </para>
     /// </remarks>
-    internal static partial class ServerMode
+    internal static partial class Host
     {
         // No logic here yet.
     }

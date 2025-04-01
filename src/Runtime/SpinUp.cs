@@ -6,13 +6,14 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250319_code
-// u250319_documentation
+// u250327_code
+// u250327_documentation
 
 using System.IO;
 using System.Windows.Controls;
 
 using TingenCommander.Utility;
+using TingenCommander.Utility.Du;
 
 namespace TingenCommander.Runtime
 {
@@ -22,26 +23,26 @@ namespace TingenCommander.Runtime
         /// <summary>Initialize the Tingen Commander environment.</summary>
         /// <param name="cmdrSession">The Tingen Commander session object.</param>
         /// <param name="txbxControls">A dictionary containing any TextBox controls that will be modified.</param>
-        /// <remarks>
-        /// <para>
-        /// </para>
-        /// </remarks>
         internal static void Initialize(Session.CmdrSession cmdrSession, Dictionary<string, TextBox> txbxControls)
         {
-            var rootPath    = Framework.RootPath.GetPath(cmdrSession.RootPathFile);
-            var hostName    = File.ReadAllText(cmdrSession.HostNameFile);
-            var machineType = EnvironmentDetail.GetMachineType(hostName);
+            var cmdrRootPath = Framework.RootPath.Load(cmdrSession.CmdrRootPathFile);
 
-            UpdateUserInterface(txbxControls, machineType, hostName);
 
-            switch (EnvironmentDetail.GetMachineType(cmdrSession.HostNameFile))
+            var tngnHostName    = File.ReadAllText(cmdrSession.TngnHostNameFile);
+
+
+            var machineType = EnvironmentDetail.GetMachineType(tngnHostName);
+
+            UpdateUserInterface(txbxControls, machineType, tngnHostName);
+
+            switch (EnvironmentDetail.GetMachineType(cmdrSession.TngnHostNameFile))
             {
                 case "server":
-                    ServerMode(rootPath);
+                    HostMode(cmdrRootPath);
                     break;
 
                 default:
-                    WorkstationMode(rootPath);
+                    WorkstationMode(cmdrRootPath);
                     break;
             }
         }
@@ -57,18 +58,26 @@ namespace TingenCommander.Runtime
             txbxControls["txbxHostName"].Text    = hostName;
         }
 
-        internal static void ServerMode(string rootPath)
+        /// <summary>Verify, rename, and remove directories when in Host Mode.</summary>
+        /// <param name="rootPath">The Tingen Commander root path</param>
+        /// <remarks>
+        /// </remarks>
+        internal static void HostMode(string rootPath)
         {
-            Framework.Directories.Verify(Framework.ServerMode.Required(rootPath));
-            Framework.Directories.Rename(Framework.ServerMode.Renamed(rootPath));
-            Framework.Directories.Remove(Framework.ServerMode.Removed(rootPath));
+            WithDirectory.Verify(Framework.Host.cat_lst_RequiredDirectories(rootPath));
+            WithDirectory.Rename(Framework.Host.cat_lst_RenamedDirectories(rootPath));
+            WithDirectory.Remove(Framework.Host.cat_lst_RemovedDirectories(rootPath));
         }
 
+        /// <summary>Verify, rename, and remove directories when in Workstation Mode.</summary>
+        /// <param name="rootPath">The Tingen Commander root path</param>
+        /// <remarks>
+        /// </remarks>
         internal static void WorkstationMode(string rootPath)
         {
-            Framework.Directories.Verify(Framework.WorkstationMode.Required(rootPath));
-            Framework.Directories.Rename(Framework.WorkstationMode.Renamed(rootPath));
-            Framework.Directories.Remove(Framework.WorkstationMode.Removed(rootPath));
+            WithDirectory.Verify(Framework.Workstation.cat_lst_RequiredDirectories(rootPath));
+            WithDirectory.Rename(Framework.Workstation.cat_lst_RenamedDirectories(rootPath));
+            WithDirectory.Remove(Framework.Workstation.cat_lst_RemovedDirectories(rootPath));
         }
     }
 }

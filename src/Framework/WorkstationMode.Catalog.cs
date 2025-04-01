@@ -6,8 +6,8 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250319_code
-// u250319_documentation
+// u250325_code
+// u250325_documentation
 
 namespace TingenCommander.Framework
 {
@@ -31,7 +31,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> Required(string root)
+        internal static List<string> cat_lst_RequiredDirectories(string root)
         {
             return
             [
@@ -39,7 +39,7 @@ namespace TingenCommander.Framework
                 $@"{root}/Commander/Logs"
             ];
         }
-       
+
         /// <summary>Provides a list of workstation directory to be renamed.</summary>
         /// <remarks>
         ///   <para>
@@ -58,7 +58,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of new directory names.</returns>
-        internal static Dictionary<string, string> Renamed(string root)
+        internal static Dictionary<string, string> cat_lst_RenamedDirectories(string root)
         {
             return new Dictionary<string, string>()
             {
@@ -84,7 +84,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> Removed(string root)
+        internal static List<string> cat_lst_RemovedDirectories(string root)
         {
             return
             [

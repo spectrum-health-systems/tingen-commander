@@ -11,7 +11,7 @@
 
 using System.IO;
 
-namespace TingenCommander.Framework
+namespace TingenCommander.Mode
 {
     /// <summary>Logic related to the Tingen Commander frameworks when in Workstation mode.</summary>
     /// <remarks>

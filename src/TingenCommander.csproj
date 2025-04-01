@@ -10,15 +10,14 @@
 
 <PropertyGroup>
     <DebugType>embedded</DebugType>
-    <Version>0.2.0</Version>
-    <FileVersion>0.2.0</FileVersion>
+    <Version>25.4.0</Version>
+    <FileVersion>25.4.0</FileVersion>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
 </PropertyGroup>
 
 <ItemGroup>
   <None Remove="AppData\README.md" />
   <None Remove="AppData\Runtime\README.md" />
-  <None Remove="AppData\Runtime\tngncmdr.rootpath" />
 </ItemGroup>
 
 <ItemGroup>
@@ -31,14 +30,14 @@
   <Content Include="AppData\Runtime\README.md">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
-  <Content Include="AppData\Runtime\tngncmdr.rootpath">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </Content>
 </ItemGroup>
 
 <ItemGroup>
+  <None Update="AppData\Runtime\cmdr.rootpath">
+    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+  </None>
   <None Update="AppData\Runtime\tngn.hostname">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
   </None>
 </ItemGroup>
 
