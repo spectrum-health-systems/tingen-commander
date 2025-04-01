@@ -6,13 +6,76 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250325_code
-// u250325_documentation
+// u250401_code
+// u250401_documentation
 
 namespace TingenCommander.Framework
 {
-    internal static partial class WorkstationMode
+    internal static partial class Workstation
     {
+        /* Messages
+         */
+
+        /// <summary></summary>
+        /// <param name="rootPath">The Tingen Commander root path.</param>
+        /// <returns></returns>
+        public static Dictionary<string, string> cat_PathNotFound(string rootPath)
+        {
+            return new Dictionary<string, string> {
+                { "Caption", "Root path is invalid!" },
+                { "Message", $"The Tingen Commander root directory defined in \"AppData\\Runtime\\tngncmdr.root\" cannot be found.{Environment.NewLine}" +
+                  Environment.NewLine +
+                  $"Would you like to create this directory now?{Environment.NewLine}" +
+                  Environment.NewLine +
+                  $"Click \"OK\" to create \"{rootPath}\"{Environment.NewLine}" +
+                  $"Click \"Cancel\" to exit Tingen Commander." }
+            };
+        }
+
+        /// <summary></summary>
+        /// <param name="rootPath">The Tingen Commander root path.</param>
+        /// <returns></returns>
+        public static Dictionary<string, string> cat_PathFileNotFound(string rootPath)
+        {
+            return new Dictionary<string, string> {
+                { "Caption", "Cannot find the root path file: cmdr.rootpath" },
+                { "Message", $"The file that defines the Tingen Commander root directory for cannot be found.{Environment.NewLine}" +
+                  Environment.NewLine +
+                  "Since this file is required by Tingen Commander, it will be created for you now." }
+            };
+        }
+
+        /// <summary></summary>
+        /// <param name="rootPath">The Tingen Commander root path.</param>
+        /// <returns></returns>
+        public static Dictionary<string, string> cat_PathFileCreateError()
+        {
+            return new Dictionary<string, string> {
+                { "Caption", "Error creating cmdr.rootpath file" },
+                { "Message", $"The cmdr.rootpath file could not be created.{Environment.NewLine}" +
+                  Environment.NewLine +
+                  "Try creating the file manually, then re-launching Tingen Commander." }
+            };
+        }
+
+        /// <summary></summary>
+        /// <param name="rootPath">The Tingen Commander root path.</param>
+        /// <returns></returns>
+        public static Dictionary<string, string> cat_PathFileCreated(string rootPath)
+        {
+            return new Dictionary<string, string> {
+                { "Caption", "Created cmdr.rootpath file" },
+                { "Message", $"The cmdr.rootPath file has been created with the following default value:{Environment.NewLine}" +
+                  Environment.NewLine +
+                  $"  {rootPath}\"{Environment.NewLine}" +
+                  Environment.NewLine +
+                  "Please re-launch Tingen Commander." }
+            };
+        }
+
+        /* Directories
+         */
+
         /// <summary>Returns a list of required workstation directories.</summary>
         /// <remarks>
         ///   <para>
@@ -31,7 +94,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> cat_lst_RequiredDirectories(string root)
+        internal static List<string> cat_RequiredDirectories(string root)
         {
             return
             [
@@ -58,7 +121,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of new directory names.</returns>
-        internal static Dictionary<string, string> cat_lst_RenamedDirectories(string root)
+        internal static Dictionary<string, string> cat_RenamedDirectories(string root)
         {
             return new Dictionary<string, string>()
             {
@@ -84,7 +147,7 @@ namespace TingenCommander.Framework
         ///   </para>
         /// </remarks>
         /// <returns>A list of required directories.</returns>
-        internal static List<string> cat_lst_RemovedDirectories(string root)
+        internal static List<string> cat_RemovedDirectories(string root)
         {
             return
             [

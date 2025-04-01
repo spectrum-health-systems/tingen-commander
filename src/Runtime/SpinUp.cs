@@ -6,8 +6,8 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250327_code
-// u250327_documentation
+// u250401_code
+// u250401_documentation
 
 using System.IO;
 using System.Windows.Controls;
@@ -25,10 +25,8 @@ namespace TingenCommander.Runtime
         /// <param name="txbxControls">A dictionary containing any TextBox controls that will be modified.</param>
         internal static void Initialize(Session.CmdrSession cmdrSession, Dictionary<string, TextBox> txbxControls)
         {
-            var cmdrRootPath = Framework.RootPath.Load(cmdrSession.CmdrRootPathFile);
-
-
-            var tngnHostName    = File.ReadAllText(cmdrSession.TngnHostNameFile);
+            var cmdrRootPath = Framework.CmdrRootPath.Load(cmdrSession.CmdrRootPathFile);
+            var tngnHostName = File.ReadAllText(cmdrSession.TngnHostNameFile);
 
 
             var machineType = EnvironmentDetail.GetMachineType(tngnHostName);
@@ -75,9 +73,9 @@ namespace TingenCommander.Runtime
         /// </remarks>
         internal static void WorkstationMode(string rootPath)
         {
-            WithDirectory.Verify(Framework.Workstation.cat_lst_RequiredDirectories(rootPath));
-            WithDirectory.Rename(Framework.Workstation.cat_lst_RenamedDirectories(rootPath));
-            WithDirectory.Remove(Framework.Workstation.cat_lst_RemovedDirectories(rootPath));
+            WithDirectory.Verify(Framework.WorkstationMode.cat_RequiredDirectories(rootPath));
+            WithDirectory.Rename(Framework.WorkstationMode.cat_RenamedDirectories(rootPath));
+            WithDirectory.Remove(Framework.WorkstationMode.cat_RemovedDirectories(rootPath));
         }
     }
 }

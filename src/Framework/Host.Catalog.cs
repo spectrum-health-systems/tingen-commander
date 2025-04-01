@@ -6,14 +6,15 @@
 // █   █  █ █ █ █ █ █ █ ███ █ █ █ █  █ ██  ███
 //  ██  ██  █   █ █   █ █ █ █  ██ ███  ███ █  █
 
-// u250325_code
-// u250325_documentation
+// u250401_code
+// u250401_documentation
 
 namespace TingenCommander.Framework
 {
-    internal static partial class TngnHost
+    internal static partial class Host
     {
-        #region MESSAGEBOX
+        /* Messages
+         */
 
         /* MessageBox catalog information.
          */
@@ -54,41 +55,12 @@ namespace TingenCommander.Framework
             Environment.NewLine +
             "Try creating the file manually, then re-launching Tingen Commander.";
 
-        #endregion MESSAGEBOX
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>Let the user know the file that defines the Tingen Web Service host name cannot be found.</summary>
         /// <returns>A message letting the user know the file that defines the Tingen Web Service host name cannot be found.</returns>
         public static string cat_msg_HostNameFileMissing() =>
             $"The file that defines the Tingen Web Service host name cannot be found.{Environment.NewLine}" +
             Environment.NewLine +
             $"Please verify the \"AppData\\Runtime\\tngncmdr.hostname\" file exists and contains a valid host name.";
-
 
         /// <summary>Returns a list of required server directories.</summary>
         /// <remarks>

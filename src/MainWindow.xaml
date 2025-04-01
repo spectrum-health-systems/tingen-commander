@@ -141,11 +141,11 @@
             Margin="10,381,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            BorderBrush="Black"
             Background="Black"
-            Foreground="White"
+            BorderBrush="Black"
             BorderThickness="1"
-            Content="Name" />
+            Content="Name"
+            Foreground="White" />
         <TextBox
             x:Name="txbxHostName"
             Width="135"
