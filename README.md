@@ -1,6 +1,8 @@
 <div align="center">
 
-  ![logo](./.github/image/logo/)
+  ![logo](./.github/image/logo/TingenCommander_logo_320x420.png)
+
+  ![Version 2.1](https://github.com/spectrum-health-systems/tingen/blob/main/.github/image/version/v2.1.png)
 
 </div>
 
