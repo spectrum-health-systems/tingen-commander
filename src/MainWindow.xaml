@@ -1,6 +1,25 @@
 ﻿<!--
-// u250121_code
-// u250109_documentation
+    ████████╗██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗
+    ╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║
+    ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
+    ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║
+    ██║   ██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║
+    ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+    ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗██████╗
+    ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝██╔══██╗
+    ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║█████╗  ██████╔╝
+    ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
+    ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████╗██║  ██║
+    ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+    Tingen Web Service Utility
+    Development Release 0.1.0
+    
+    https://github.com/APrettyCoolProgram/Tingen-Commander
+    Copyright (c) A Pretty Cool Program. All rights reserved.
+    Licensed under the Apache 2.0 license.
+    
+    u250313_code
+    u250313_documentation
 -->
 
 <Window
@@ -10,170 +29,145 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TingenCommander"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Tingen Commander"
-    Width="900"
-    Height="500"
-    ResizeMode="NoResize"
+    Title="Tingen Commander v0.1.0"
+    Width="1000"
+    Height="600"
     mc:Ignorable="d">
     <Grid>
-
-        <!-- Tingen web service -->
-        <Label
-            x:Name="lblTingenWebServiceHeader"
-            Width="349"
-            Height="46"
-            Margin="199,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="center"
-            BorderBrush="Black"
-            BorderThickness="2"
-            Content="Tingen web service"
-            FontSize="22"
-            FontWeight="Bold" />
-
-        <!--  Status  -->
-        <Label
-            x:Name="lblStatusHeader"
-            Width="175"
-            Height="28"
-            Margin="199,56,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="WhiteSmoke"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="STATUS"
-            FontSize="12"
-            FontWeight="Bold" />
-        <Label
-            x:Name="lblStatus"
-            Width="175"
-            Height="28"
-            Margin="373,56,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="Unknown"
-            FontSize="12" />
-
-        <!--  Version  -->
-        <Label
-            x:Name="lblVersionHeader"
-            Width="175"
-            Height="28"
-            Margin="199,82,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="WhiteSmoke"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="VERSION"
-            FontSize="12"
-            FontWeight="Bold" />
-        <Label
-            x:Name="lblVersione"
-            Width="175"
-            Height="28"
-            Margin="373,82,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="00.00.00.00 [b000000.0000]"
-            FontSize="12" />
-
-
-        <!--  Last updated  -->
-        <Label
-            x:Name="lblLastUpdatedHeader"
-            Width="175"
-            Height="28"
-            Margin="199,108,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="WhiteSmoke"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="LAST UPDATED"
-            FontSize="12"
-            FontWeight="Bold" />
-        <Label
-            x:Name="lblLastUpdated"
-            Width="175"
-            Height="28"
-            Margin="373,108,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="00/00/0000 00:00:00 AM"
-            FontSize="12" />
-
-        <!--  Commander mode  -->
-        <Label
-            x:Name="lblCommanderModeHeader"
-            Width="85"
-            Margin="10,260,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="Logged in as" />
-        <Label
-            x:Name="lblCommanderMode"
-            Width="100"
-            Margin="94,260,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="BlanchedAlmond"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="Standard user" />
-
-        <!--  Tingen environment selector-->
-        <Label
-            x:Name="lblEnvironmentHeader"
-            Width="85"
-            Margin="10,292,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="Environment" />
-        <Label
-            x:Name="lblEnvironment"
-            Width="100"
-            Margin="94,292,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="LightBlue"
-            BorderBrush="Black"
-            BorderThickness="1"
-            Content="LIVE" Height="28" />
-
-        <!-- Tingen Commander logo -->
+        <!--  Tingen Commander logo  -->
         <Image
             x:Name="image"
             Width="184"
             Height="245"
             Margin="10,10,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Source="/AppData/Image/TingenCommander116x154.png">
+            VerticalAlignment="Top"
+            Source="/AppData/Image/TingenCommander116x154.png">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="/AppData/Image/TingenCommander116x154.png" />
             </Image.OpacityMask>
         </Image>
 
+        <Label
+            x:Name="lblLocalMachine"
+            Width="184"
+            Margin="10,260,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Background="Black"
+            Content="Local machine"
+            Foreground="White" />
+        <Label
+            x:Name="lblMachineName"
+            Width="50"
+            Margin="10,287,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Name"
+            Foreground="White" />
+        <TextBox
+            x:Name="txbxMachineName"
+            Width="135"
+            Height="28"
+            Margin="59,287,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label
+            x:Name="lblMachineType"
+            Width="50"
+            Margin="10,316,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Type"
+            Foreground="White" />
+        <TextBox
+            x:Name="txbxMachineType"
+            Width="135"
+            Height="28"
+            Margin="59,316,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Label
+            x:Name="lblWebServiceHost"
+            Width="184"
+            Margin="10,354,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Background="Black"
+            Content="Web Service Host"
+            Foreground="White" />
+        <Label
+            x:Name="lblHostName"
+            Width="50"
+            Margin="10,381,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Black"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Name"
+            Foreground="White" />
+        <TextBox
+            x:Name="txbxHostName"
+            Width="135"
+            Height="28"
+            Margin="59,381,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="1"
+            RenderTransformOrigin="0.5,0.5"
+            Text="---"
+            TextWrapping="Wrap">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.024" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
 
     </Grid>
 </Window>

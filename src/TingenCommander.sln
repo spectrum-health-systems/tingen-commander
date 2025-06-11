@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TingenCommander", "TingenCommander.csproj", "{288658CC-AB33-407D-B295-B9272CDDBB85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TingenCommander", "TingenCommander.csproj", "{822E0209-02ED-4A1A-88D8-5901C2E46B96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{288658CC-AB33-407D-B295-B9272CDDBB85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{288658CC-AB33-407D-B295-B9272CDDBB85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{288658CC-AB33-407D-B295-B9272CDDBB85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{288658CC-AB33-407D-B295-B9272CDDBB85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822E0209-02ED-4A1A-88D8-5901C2E46B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822E0209-02ED-4A1A-88D8-5901C2E46B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822E0209-02ED-4A1A-88D8-5901C2E46B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822E0209-02ED-4A1A-88D8-5901C2E46B96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7DD4836-3B57-4533-A49F-0A53C03972E0}
 	EndGlobalSection
 EndGlobal
