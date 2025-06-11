@@ -8,6 +8,8 @@
 
 # About Tingen Commander
 
+**Tingen Commander is currently being developed, and is not intended for use yet!**
+
 Tingen Commander is a utility for the Tingen Web Service.
 
 Tingen Commander runs in two different modes, each with it's own set of features:
@@ -22,7 +24,6 @@ Web Service Host Mode runs on the server that hosts the Tingen Web Service, and 
 
   * Thing
   * Another thing
-
 
 # Using
 
